@@ -1,0 +1,75 @@
+.container {
+  /* overflow: hidden; */
+  min-height: 100vh;
+  margin-inline: var(--margin);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.divider {
+  height: 100%;
+  width: 1px;
+  background-color: var(--light-lc);
+  position: absolute;
+  grid-column-start: 4;
+}
+
+.containerWrapper {
+  position: relative;
+  grid-column: 1 / 4;
+}
+
+.parasContainer {
+  font-size: 20px;
+  top: 0;
+  font-weight: 500;
+  line-height: 130%;
+  font-variation-settings: "wdth" 90;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15vh;
+  color: var(--light-lc);
+}
+
+.parasContainer h3 {
+  font-size: 40px;
+  font-weight: 600;
+  font-variation-settings: "wdth" 62;
+  margin-bottom: 13px;
+  color: var(--light-p);
+  line-height: 80%;
+}
+
+.glow {
+  position: absolute;
+  height: 80%;
+  width: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -40%;
+  background-color: var(--accent);
+  filter: blur(150px);
+  z-index: 0;
+}
+
+.monkeys {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  right: -20vw;
+  top: -10vh;
+  z-index: 1;
+}
+
+.monkeys img {
+  width: 100%;
+  height: auto;
+}
+
+.monkeys img:last-child {
+  margin-top: -25vw;
+}

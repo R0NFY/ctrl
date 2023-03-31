@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  height: 100vh;
+  position: relative;
+  place-items: center;
+  margin-top: 240px;
+  margin-bottom: 240px;
+}
+
+.textContainer {
+  overflow: hidden;
+  max-width: 60%;
+  position: relative;
+}
+
+.container p {
+  font-size: 40px;
+  width: 100%;
+  margin-inline: auto;
+  line-height: 130%;
+  font-weight: 600;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.overlay {
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  inset: 0;
+}

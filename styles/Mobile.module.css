@@ -1,0 +1,131 @@
+.container {
+  height: 100vh;
+  margin-inline: var(--margin);
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.divider {
+  height: 100%;
+  width: 1px;
+  background-color: var(--light-lc);
+  position: absolute;
+  grid-column-start: 4;
+}
+
+.containerWrapper {
+  position: relative;
+  grid-column: 1 / 4;
+}
+
+.parasContainer {
+  font-size: 20px;
+  top: 0;
+  font-weight: 500;
+  line-height: 130%;
+  font-variation-settings: "wdth" 90;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15vh;
+  color: var(--light-lc);
+}
+
+.parasContainer h3 {
+  font-size: 40px;
+  font-weight: 600;
+  font-variation-settings: "wdth" 62;
+  margin-bottom: 13px;
+  color: var(--light-p);
+}
+
+.phone {
+  grid-column-start: 8;
+  width: 18vw;
+  aspect-ratio: 296 / 641;
+  border: 2px solid var(--light-lc);
+  border-radius: 16px;
+}
+
+.bars {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.lock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 7.5vw;
+  font-weight: 600;
+  overflow: hidden;
+  width: 100%;
+}
+
+.lock p:first-child {
+  transform: translateY(4vw);
+  color: var(--dark-p);
+  opacity: 50%;
+  z-index: 0;
+}
+.lock p:last-child {
+  transform: translateY(-4vw);
+  color: transparent;
+  -webkit-text-stroke: 1px #342641;
+  z-index: 1;
+  position: relative;
+}
+
+.lock p:last-child span {
+  position: absolute;
+  inset: 0;
+  text-shadow: 2px 2px 0px #342641;
+  z-index: 0;
+  transform: translate(4px, 4px);
+}
+
+.lock img {
+  width: 10vw;
+  z-index: 1;
+}
+
+.glow {
+  position: absolute;
+  height: 40%;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--accent);
+  filter: blur(100px);
+  z-index: 0;
+}
+
+.phone > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 16px;
+}
+
+.notifications {
+  grid-column: 1 / 4;
+  position: absolute;
+  align-self: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notifications img {
+  margin-top: -64px;
+  width: 100%;
+  height: auto;
+}

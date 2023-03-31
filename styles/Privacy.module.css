@@ -1,0 +1,41 @@
+.container {
+  margin-top: 240px;
+  position: relative;
+  display: grid;
+  height: 100vh;
+}
+
+.container p {
+  font-size: 8.33vw;
+  text-transform: uppercase;
+  font-variation-settings: "wdth" 62;
+  line-height: 90%;
+  font-weight: 600;
+}
+
+.container img {
+  width: 20vw;
+  height: auto;
+  justify-self: center;
+  margin-top: -30vh;
+  z-index: 101;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin-top: 10vh;
+  z-index: 100;
+}
+
+.overlay {
+  width: 50vw;
+  height: 80vh;
+  position: absolute;
+  place-self: center;
+  background-color: var(--dark-p);
+  opacity: 0.75;
+  filter: blur(5vw);
+  z-index: 1;
+}
