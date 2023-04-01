@@ -9,11 +9,10 @@ function Privacy() {
   const imagesCount = 10
   const [fingerSrc, setFingerSrc] = useState(animObj.start)
 
-  for (let i = 0; i < imagesCount; i++) {
-    new Image().src = `/privacy/${i}.png`
-  }
-
   useLayoutEffect(() => {
+    for (let i = 0; i < imagesCount; i++) {
+      new Image().src = `/privacy/${i}.png`
+    }
     const fullTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".privacy",
