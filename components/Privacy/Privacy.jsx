@@ -6,7 +6,12 @@ import { useLayoutEffect, useState } from "react"
 
 function Privacy() {
   let animObj = { start: 1 }
+  const imagesCount = 10
   const [fingerSrc, setFingerSrc] = useState(animObj.start)
+
+  for (let i = 0; i < imagesCount; i++) {
+    new Image().src = `/privacy/${i}.png`
+  }
 
   useLayoutEffect(() => {
     const fullTl = gsap.timeline({
@@ -80,7 +85,7 @@ function Privacy() {
       .to(
         animObj,
         {
-          start: 10,
+          start: imagesCount,
           onUpdate: () => {
             if (Math.round(animObj.start) != fingerSrc) {
               setFingerSrc(Math.round(animObj.start))
