@@ -9,39 +9,41 @@ function Loader() {
   useLayoutEffect(() => {
     // callback function to call when event triggers
     const onPageLoad = () => {
-      gsap.to(".loader img", {
-        scale: 5,
-        opacity: 0,
-        ease: "power2.in",
-        duration: 0.35,
-        delay: 0.35,
-        onComplete: () =>
-          setTimeout(() => {
-            document.querySelector(".loader").style.display = "none"
-          }, 150),
-      })
-      gsap.to(".loader", {
-        backgroundColor: "rgba(239, 239, 241, 0)",
-        ease: "power2.inOut",
-        delay: 0.5,
-        duration: 0.05,
-      })
-      gsap.fromTo(
-        ".intro > div",
-        {
+      setTimeout(() => {
+        gsap.to(".loader img", {
+          scale: 5,
           opacity: 0,
-          scale: 0.95,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          ease: "power2.out",
+          ease: "power2.in",
           duration: 0.35,
+          delay: 0.35,
+          onComplete: () =>
+            setTimeout(() => {
+              document.querySelector(".loader").style.display = "none"
+            }, 150),
+        })
+        gsap.to(".loader", {
+          backgroundColor: "rgba(239, 239, 241, 0)",
+          ease: "power2.inOut",
           delay: 0.5,
-        }
-      )
+          duration: 0.05,
+        })
+        gsap.fromTo(
+          ".intro > div",
+          {
+            opacity: 0,
+            scale: 0.95,
+            y: 100,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            ease: "power2.out",
+            duration: 0.35,
+            delay: 0.5,
+          }
+        )
+      }, 250)
     }
 
     // Check if the page has already loaded

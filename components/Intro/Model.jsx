@@ -29,34 +29,6 @@ export function Model(props) {
   let animObj = { time: 0, scale: 1, positionZ: 0 }
 
   useLayoutEffect(() => {
-    // gsap.fromTo(
-    //   ".key ",
-    //   {
-    //     opacity: 0,
-    //     scale: 0.95,
-    //     y: 100,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     scale: 1,
-    //     y: 0,
-    //     ease: "power2.out",
-    //   }
-    // )
-    // gsap.fromTo(
-    //   ".fade ",
-    //   {
-    //     opacity: 0,
-    //     scale: 0.95,
-    //     y: 100,
-    //   },
-    //   {
-    //     opacity: 1,
-    //     scale: 1,
-    //     y: 0,
-    //     ease: "power2.out",
-    //   }
-    // )
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".intro",
