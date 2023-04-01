@@ -1,0 +1,13 @@
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  background-color: var(--light-p);
+}
+
+.container img {
+  width: 20vw;
+}

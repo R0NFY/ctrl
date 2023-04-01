@@ -28,7 +28,7 @@ function Scene() {
 
 function Key() {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} key`}>
       <Canvas>
         <Scene />
       </Canvas>

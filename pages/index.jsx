@@ -12,6 +12,7 @@ import Privacy from "@/components/Privacy/Privacy"
 import Copy from "@/components/Copy/Copy"
 import Monkey from "@/components/Monkey/Monkey"
 import Email from "@/components/Email/Email"
+import Loader from "@/components/Loader/Loader"
 
 const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"] })
 
@@ -21,6 +22,7 @@ export default function Home({ data }) {
       <Head>
         <title>CTRL</title>
       </Head>
+      <Loader />
       <Intro data={data[0].intro} />
       <Hero data={[data[0].intro, data[0].hero]} />
       <Desktop data={data[0].desktop} />
