@@ -52,7 +52,7 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 800px) {
   .container h1 span {
     -webkit-text-stroke: 1px var(--dark-p);
   }

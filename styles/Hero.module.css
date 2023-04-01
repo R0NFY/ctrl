@@ -64,3 +64,11 @@
 
   z-index: 1;
 }
+
+@media (max-width: 800px) {
+  .container p {
+    font-size: 28px;
+    width: calc(100% - var(--margin) * 2);
+    margin-top: 42px;
+  }
+}

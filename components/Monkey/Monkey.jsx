@@ -36,7 +36,7 @@ function Monkey(props) {
     ).to(".monkey > *:not(.monkeyDivider)", {
       opacity: 0,
       scale: 0.95,
-      y: 100,
+      y: -100,
       duration: 0.4,
       delay: 0.3,
       ease: "power4.in",
@@ -50,6 +50,7 @@ function Monkey(props) {
           <p>{props.data.monkeyDescOne}</p>
         </div>
       </div>
+      <div className={styles.mobileDivider}></div>
       <div className={`${styles.divider} monkeyDivider`}></div>
       <div className={styles.monkeys}>
         <img src="/monkey/one.png" alt="card one" />

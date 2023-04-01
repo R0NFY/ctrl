@@ -3,10 +3,11 @@
   position: relative;
   display: grid;
   height: 100vh;
+  text-align: center;
 }
 
 .container p {
-  font-size: 8.33vw;
+  font-size: 160px;
   text-transform: uppercase;
   font-variation-settings: "wdth" 62;
   line-height: 90%;
@@ -14,10 +15,10 @@
 }
 
 .container img {
-  width: 20vw;
+  width: 400px;
   height: auto;
   justify-self: center;
-  margin-top: -30vh;
+  margin-top: -250px;
   z-index: 101;
 }
 
@@ -38,4 +39,42 @@
   opacity: 0.75;
   filter: blur(5vw);
   z-index: 1;
+}
+
+@media (max-width: 1280px) {
+  .container p {
+    font-size: 120px;
+  }
+  .container img {
+    width: 300px;
+    margin-top: -375px;
+  }
+  .overlay {
+    width: 50vw;
+    height: 60vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .container p {
+    font-size: 80px;
+  }
+  .container img {
+    width: 230px;
+    margin-top: -400px;
+  }
+  .overlay {
+    width: 50vw;
+    height: 40vh;
+  }
+}
+
+@media (max-width: 540px) {
+  .container p {
+    font-size: 64px;
+  }
+  .container img {
+    width: 180px;
+    margin-top: -300px;
+  }
 }

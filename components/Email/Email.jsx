@@ -7,9 +7,9 @@ function Email() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".email",
-        scrub: 0.2,
-        start: "top+=30% bottom",
-        end: "bottom-=10% bottom",
+        start: () => `top top`,
+        end: "bottom bottom",
+        toggleActions: "play none reverse none",
         refreshPriority: 91,
         defaults: {
           ease: "none",
@@ -18,18 +18,18 @@ function Email() {
     })
 
     tl.fromTo(
-      ".email",
+      ".email > *",
       {
         opacity: 0,
         scale: 0.95,
-        y: 100,
+        y: 50,
       },
       {
         y: 0,
         opacity: 1,
         scale: 1,
-        duration: 1,
-        ease: "power2.out",
+        ease: "power2.inOut",
+        duration: 0.15,
       }
     )
   }, [])

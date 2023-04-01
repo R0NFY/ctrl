@@ -5,29 +5,44 @@ import { useLayoutEffect } from "react"
 
 function Copy(props) {
   useLayoutEffect(() => {
-    let gradient = {
-      value:
-        "linear-gradient(to bottom, #E4C8F9 11.98%, #9E3EEA 27.08%, #460D72 88.54%);",
-    }
-    let target = document.querySelector(".copy p")
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".copy",
         scrub: true,
-        start: "top top+=50%",
-        end: "bottom bottom-=20%",
+        pin: ".copy",
+        start: "top top",
+        end: () => `+=${window.innerHeight * 2}`,
+        onLeave: () => (document.querySelector(".copy").style.display = "none"),
+        onEnterBack: () =>
+          (document.querySelector(".copy").style.display = "grid"),
         refreshPriority: 92,
         defaults: {
           ease: "none",
         },
       },
     })
-    tl.to(gradient, {
-      value:
-        "linear-gradient(to bottom, #460D72 2.08%, #9E3EEA 14.58%, #E4C8F9 67.71%)",
-      ease: "linear",
-      onUpdate: () => (target.style.backgroundImage = gradient.value),
-    })
+    tl.fromTo(
+      ".copy p",
+      {
+        backgroundImage:
+          "linear-gradient(to bottom, #E4C8F9 8.85%, #9E3EEA 26.04%, #460D72 90.1%)",
+      },
+      {
+        backgroundImage:
+          "linear-gradient(to bottom, #460D72 1.56%, #E4C8F9 40.1%, #9E3EEA 85.94%)",
+        ease: "linear",
+      }
+    )
+      .to(".copy p", {
+        backgroundImage:
+          "linear-gradient(to bottom, #460D72 1.04%, #9E3EEA 9.9%, #E4C8F9 67.19%)",
+        ease: "linear",
+      })
+      .to(".copy", {
+        scale: 5,
+        opacity: 0,
+        ease: "power2.in",
+      })
   }, [])
   return (
     <div className={`${styles.container} copy`}>

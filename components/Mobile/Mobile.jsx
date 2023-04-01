@@ -15,10 +15,6 @@ function Mobile(props) {
         end: () => `+=${window.innerHeight * 4.5}`,
         scrub: 0.2,
         refreshPriority: 95,
-        // onLeave: () =>
-        //   (document.querySelector(".desktop").style.display = "none"),
-        // onEnterBack: () =>
-        //   (document.querySelector(".desktop").style.display = "grid"),
       },
     })
     tl.fromTo(
@@ -101,7 +97,7 @@ function Mobile(props) {
       .to(".mobile > *:not(.mobileDivider)", {
         opacity: 0,
         scale: 0.95,
-        y: 100,
+        y: -100,
         duration: 0.4,
         delay: 0.3,
         ease: "power4.in",
@@ -140,6 +136,7 @@ function Mobile(props) {
         </div>
       </div>
       <div className={`${styles.divider} mobileDivider`}></div>
+      <div className={`${styles.mobileDivider}`}></div>
       <div className={styles.phone}>
         <div className={styles.glow}></div>
         <img className={`${styles.bars} bars`} src="/mobile/phone.svg" alt="" />

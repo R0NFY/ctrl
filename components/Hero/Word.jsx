@@ -30,6 +30,9 @@ function Word(props) {
         .different {
           width: 100%;
         }
+        @media (max-width: 800px) {
+          transform: translateY(${-8 * props.number}px);
+        }
       `}</style>
     </>
   )

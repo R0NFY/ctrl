@@ -28,7 +28,7 @@ export default function Home({ data }) {
       <Experience />
       <Mobile data={data[0].mobile} />
       <Privacy />
-      {/* <Monkey data={data[0].monkey} /> */}
+      <Monkey data={data[0].monkey} />
       <Copy data={data[0].copy} />
       <Email />
       <style jsx global>

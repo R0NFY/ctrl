@@ -9,7 +9,6 @@ import { act, useFrame } from "@react-three/fiber"
 
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-
 gsap.registerPlugin(ScrollTrigger)
 
 export function Model(props) {
@@ -96,6 +95,8 @@ export function Model(props) {
     actions.CameraAction.time = animObj.time
     actions.CubeAction.time = animObj.time
 
+    group.current.scale.set(0.5, 0.5, 0.5)
+
     cube.current.scale.set(animObj.scale, animObj.scale, animObj.scale)
     cube.current.position.set(
       cube.current.position.x,
@@ -111,7 +112,7 @@ export function Model(props) {
           makeDefault={true}
           far={100}
           near={0.1}
-          fov={22.9}
+          fov={window.innerWidth > 800 ? 22.9 : 35}
           position={[1.93, 1.85, 2.83]}
           rotation={[-0.43, 0.56, 0.24]}
         />

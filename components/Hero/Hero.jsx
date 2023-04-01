@@ -81,7 +81,7 @@ function Hero(props) {
       .to(
         p.current,
         {
-          scale: 0.42,
+          scale: () => (window.innerWidth > 800 ? 0.42 : 0.6),
           duration: 0.5,
           ease: "linear",
         },

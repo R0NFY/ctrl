@@ -3,14 +3,14 @@
   height: 100vh;
   position: relative;
   place-items: center;
-  margin-top: 240px;
-  margin-bottom: 240px;
+  background-color: var(--dark-p);
 }
 
 .textContainer {
   overflow: hidden;
   max-width: 60%;
   position: relative;
+  margin-inline: var(--margin);
 }
 
 .container p {
@@ -29,4 +29,28 @@
   width: 60%;
   height: 80%;
   inset: 0;
+}
+
+@media (max-width: 1280px) {
+  .textContainer {
+    max-width: 80%;
+  }
+  .container p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 800px) {
+  .textContainer {
+    max-width: 100%;
+  }
+  .container p {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container p {
+    font-size: 24px;
+  }
 }

@@ -84,7 +84,7 @@ function Desktop(props) {
       .to(".desktop > *:not(.desktopDivider)", {
         opacity: 0,
         scale: 0.95,
-        y: 100,
+        y: -100,
         duration: 0.4,
         delay: 0.4,
         ease: "power4.in",
@@ -109,6 +109,7 @@ function Desktop(props) {
         <div className={styles.line}></div>
         <p>Trading</p>
       </div>
+      <div className={styles.mobileDivider}></div>
       <div className={`${styles.imageWrapper} desktopImageWrapper`}>
         <div className={styles.glow}></div>
         <Image
