@@ -130,6 +130,9 @@
 }
 
 @media (max-width: 800px) {
+  .glow {
+    display: none;
+  }
   .container {
     margin-block: 180px;
     min-height: auto;

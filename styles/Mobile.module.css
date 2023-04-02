@@ -151,6 +151,9 @@
 }
 
 @media (max-width: 800px) {
+  .glow {
+    display: none;
+  }
   .notifications {
     display: none;
   }

@@ -230,6 +230,9 @@
 }
 
 @media (max-width: 800px) {
+  .glow {
+    display: none;
+  }
   .brainStill {
     width: 95%;
     transform: translateY(20%);

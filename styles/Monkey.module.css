@@ -90,6 +90,9 @@
 }
 
 @media (max-width: 800px) {
+  .glow {
+    display: none;
+  }
   .container {
     grid-template-columns: auto;
     grid-auto-flow: column;
