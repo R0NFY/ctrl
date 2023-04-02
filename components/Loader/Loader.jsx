@@ -40,7 +40,7 @@ function Loader() {
               scale: 1,
               y: 0,
               ease: "power2.out",
-              duration: 0.35,
+              duration: 0.5,
               delay: 0.5,
             }
           )
