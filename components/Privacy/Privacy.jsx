@@ -11,7 +11,7 @@ function Privacy() {
 
   useLayoutEffect(() => {
     if (window.innerWidth > 800) {
-      for (let i = 0; i < imagesCount; i++) {
+      for (let i = 1; i < imagesCount; i++) {
         new Image().src = `/privacy/${i}.png`
       }
       const fullTl = gsap.timeline({

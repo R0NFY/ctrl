@@ -202,7 +202,8 @@
   }
   .crypto,
   .wallet {
-    width: 80vw;
+    width: 85vw;
+    top: -17vh;
   }
   .platform {
     width: 65%;

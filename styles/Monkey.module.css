@@ -46,14 +46,14 @@
   position: absolute;
   height: 80%;
   width: 90%;
-  top: 50%;
-  transform: translateY(-50%);
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
   right: -40%;
   background-color: var(--accent);
-  /* -webkit-filter: blur(150px);
+  -webkit-filter: blur(150px);
   -moz-filter: blur(150px);
   -ms-filter: blur(150px);
-  filter: blur(150px); */
+  filter: blur(150px);
   z-index: 0;
 }
 
