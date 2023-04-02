@@ -31,6 +31,11 @@ export default function Home({ data }) {
     <>
       <Head>
         <title>CTRL</title>
+        <meta
+          name="description"
+          content="Introducing CTRL – a secure, feature-rich platform that makes centralized exchanges a thing of the past and brings you a lot more than a traditional dex."
+        />
+        desc
       </Head>
       <Loader />
       <Intro data={data[0].intro} />
