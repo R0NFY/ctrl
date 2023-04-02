@@ -31,7 +31,10 @@ function Word(props) {
           width: 100%;
         }
         @media (max-width: 800px) {
-          transform: translateY(${-5 * props.number}px);
+          .elevate {
+            width: ${props.size}%;
+            transform: translateY(${-12 * props.number}px);
+          }
         }
       `}</style>
     </>

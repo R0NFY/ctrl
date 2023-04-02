@@ -1,5 +1,4 @@
 .container {
-  /* overflow: hidden; */
   min-height: 100vh;
   margin-inline: var(--margin);
   display: grid;
@@ -93,6 +92,8 @@
     grid-auto-flow: column;
     display: block;
     width: calc(100% - var(--margin) * 2);
+    min-height: auto;
+    margin-top: 180px;
   }
   .parasContainer {
     margin-top: 10vw;
@@ -111,15 +112,16 @@
     margin-top: 40px;
   }
   .monkeys {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 120%;
-    /* right: 0; */
     top: auto;
+    inset: 0;
     bottom: -10vh;
     margin-inline: auto;
-    z-index: 1;
+    transform: translateX(-10%);
+    z-index: 2;
   }
   .monkeys img:last-child {
     margin-top: -35vw;
@@ -133,7 +135,13 @@
     bottom: 0;
     background-color: var(--accent);
     filter: blur(150px);
-    z-index: 0;
+    z-index: 1;
     margin-inline: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    margin-top: 120px;
   }
 }

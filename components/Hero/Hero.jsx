@@ -27,113 +27,115 @@ function Hero(props) {
 
   // animating everything
   useLayoutEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".hero",
-        pin: ".hero",
-        scrub: true,
-        refreshPriority: 99,
-        start: "top top",
-        end: () => `+=${document.querySelector(".intro").offsetHeight * 3}`,
-        defaults: {
-          ease: "none",
+    if (window.innerWidth > 800) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero",
+          pin: ".hero",
+          scrub: true,
+          refreshPriority: 99,
+          start: "top top",
+          end: () => `+=${document.querySelector(".intro").offsetHeight * 3}`,
+          defaults: {
+            ease: "none",
+          },
+          onLeave: () => {
+            document.querySelector(".hero").style.display = "none"
+          },
+          onEnterBack: () =>
+            (document.querySelector(".hero").style.display = "block"),
         },
-        onLeave: () => {
-          document.querySelector(".hero").style.display = "none"
-        },
-        onEnterBack: () =>
-          (document.querySelector(".hero").style.display = "block"),
-      },
-    })
-    tl.fromTo(
-      ".hero",
-      {
-        opacity: 0,
-        scale: 0.95,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.4,
-        ease: "power4.out",
-      }
-    )
-
-      .fromTo(
-        ".elevate",
+      })
+      tl.fromTo(
+        ".hero",
         {
           opacity: 0,
+          scale: 0.95,
+          y: 100,
         },
         {
           opacity: 1,
-          duration: 0.01,
-          ease: "power4.inOut",
-          delay: 0.5,
-          stagger: {
-            amount: 0.5,
+          scale: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power4.out",
+        }
+      )
+
+        .fromTo(
+          ".elevate",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 0.01,
+            ease: "power4.inOut",
+            delay: 0.5,
+            stagger: {
+              amount: 0.5,
+              ease: "linear",
+            },
+          },
+          "<"
+        )
+        .to(
+          p.current,
+          {
+            scale: () => (window.innerWidth > 800 ? 0.42 : 0.6),
+            duration: 0.5,
             ease: "linear",
           },
-        },
-        "<"
-      )
-      .to(
-        p.current,
-        {
-          scale: () => (window.innerWidth > 800 ? 0.42 : 0.6),
-          duration: 0.5,
-          ease: "linear",
-        },
-        "<"
-      )
+          "<"
+        )
 
-      .to(
-        ".experienceText",
-        {
-          height: "10vw",
-          duration: 0.5,
-          ease: "linear",
-        },
-        "<"
-      )
+        .to(
+          ".experienceText",
+          {
+            height: "10vw",
+            duration: 0.5,
+            ease: "linear",
+          },
+          "<"
+        )
 
-      .fromTo(
-        ".overlay",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        "<"
-      )
+        .fromTo(
+          ".overlay",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+          },
+          "<"
+        )
 
-      .to(".elevate:not(:last-child)", {
-        opacity: 0,
-        duration: 0.2,
-      })
-      .to(
-        ".darkFade",
-        {
+        .to(".elevate:not(:last-child)", {
           opacity: 0,
           duration: 0.2,
-        },
-        "<"
-      )
-      .to(
-        ".elevate:last-child",
-        {
-          zIndex: 10000,
-          scale: 10,
-          opacity: 0,
-          ease: "power4.in",
-          duration: 0.5,
-        },
-        "<"
-      )
+        })
+        .to(
+          ".darkFade",
+          {
+            opacity: 0,
+            duration: 0.2,
+          },
+          "<"
+        )
+        .to(
+          ".elevate:last-child",
+          {
+            zIndex: 10000,
+            scale: 10,
+            opacity: 0,
+            ease: "power4.in",
+            duration: 0.5,
+          },
+          "<"
+        )
+    }
   }, [])
 
   return (

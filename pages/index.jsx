@@ -1,10 +1,12 @@
 import { Archivo } from "next/font/google"
 import Head from "next/head"
 import { client } from "../client"
+import { useState, useLayoutEffect } from "react"
 
 import Intro from "../components/Intro/Intro"
 import Hero from "../components/Hero/Hero"
 import Desktop from "@/components/Desktop/Desktop"
+import DesktopMobile from "@/components/Desktop/DesktopMobile"
 import Features from "@/components/Features/Features"
 import Experience from "@/components/Experience/Experience"
 import Mobile from "@/components/Mobile/Mobile"
@@ -17,6 +19,14 @@ import Loader from "@/components/Loader/Loader"
 const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"] })
 
 export default function Home({ data }) {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useLayoutEffect(() => {
+    if (window.innerWidth < 800) {
+      setIsMobile(true)
+    }
+  })
+
   return (
     <>
       <Head>
@@ -25,7 +35,8 @@ export default function Home({ data }) {
       <Loader />
       <Intro data={data[0].intro} />
       <Hero data={[data[0].intro, data[0].hero]} />
-      <Desktop data={data[0].desktop} />
+      {!isMobile && <Desktop data={data[0].desktop} />}
+      {isMobile && <DesktopMobile data={data[0].desktop} />}
       <Features data={data[0].features} />
       <Experience />
       <Mobile data={data[0].mobile} />

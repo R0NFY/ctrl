@@ -5,42 +5,44 @@ import gsap from "gsap"
 
 function Monkey(props) {
   useLayoutEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".monkey",
-        pin: ".monkey",
-        start: "top top",
-        end: () => `+=${window.innerHeight * 2}`,
-        scrub: 0.2,
-        refreshPriority: 93,
-        // onLeave: () =>
-        //   (document.querySelector(".desktop").style.display = "none"),
-        // onEnterBack: () =>
-        //   (document.querySelector(".desktop").style.display = "grid"),
-      },
-    })
-    tl.fromTo(
-      ".monkey > *:not(.monkeyDivider)",
-      {
+    if (window.innerWidth > 800) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".monkey",
+          pin: ".monkey",
+          start: "top top",
+          end: () => `+=${window.innerHeight * 2}`,
+          scrub: 0.2,
+          refreshPriority: 93,
+          // onLeave: () =>
+          //   (document.querySelector(".desktop").style.display = "none"),
+          // onEnterBack: () =>
+          //   (document.querySelector(".desktop").style.display = "grid"),
+        },
+      })
+      tl.fromTo(
+        ".monkey > *:not(.monkeyDivider)",
+        {
+          opacity: 0,
+          scale: 0.95,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power4.out",
+        }
+      ).to(".monkey > *:not(.monkeyDivider)", {
         opacity: 0,
         scale: 0.95,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
+        y: -100,
         duration: 0.4,
-        ease: "power4.out",
-      }
-    ).to(".monkey > *:not(.monkeyDivider)", {
-      opacity: 0,
-      scale: 0.95,
-      y: -100,
-      duration: 0.4,
-      delay: 0.3,
-      ease: "power4.in",
-    })
+        delay: 0.3,
+        ease: "power4.in",
+      })
+    }
   }, [])
   return (
     <div className={`${styles.container} monkey`}>

@@ -27,22 +27,24 @@ function Loader() {
           delay: 0.5,
           duration: 0.05,
         })
-        gsap.fromTo(
-          ".intro > div",
-          {
-            opacity: 0,
-            scale: 0.95,
-            y: 100,
-          },
-          {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            ease: "power2.out",
-            duration: 0.35,
-            delay: 0.5,
-          }
-        )
+        if (window.innerWidth > 800) {
+          gsap.fromTo(
+            ".intro > div",
+            {
+              opacity: 0,
+              scale: 0.95,
+              y: 100,
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              ease: "power2.out",
+              duration: 0.35,
+              delay: 0.5,
+            }
+          )
+        }
       }, 250)
     }
 

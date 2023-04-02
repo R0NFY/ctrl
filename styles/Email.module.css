@@ -130,6 +130,10 @@
 }
 
 @media (max-width: 800px) {
+  .container {
+    margin-block: 180px;
+    min-height: auto;
+  }
   .container h2 {
     font-size: 48px;
   }

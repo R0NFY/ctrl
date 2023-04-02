@@ -46,6 +46,7 @@
   overflow: hidden;
   position: relative;
   background-color: var(--dark-p);
+  color: var(--light-p);
 }
 
 .feature:nth-child(2),
@@ -225,9 +226,53 @@
   }
 }
 
+@media (max-width: 800px) {
+  .brainStill {
+    width: 95%;
+    transform: translateY(20%);
+    margin-inline: auto;
+  }
+  .radarStill {
+    width: 80%;
+    transform: translateY(20%);
+    margin-inline: auto;
+  }
+  .platformStill {
+    width: 70%;
+    transform: translateY(40%);
+    margin-inline: auto;
+  }
+}
+
 @media (max-width: 540px) {
-  .feature:nth-child(2),
-  .feature:nth-child(5) {
+  .brainStill {
+    position: absolute;
+    inset: 0;
+    top: -20px;
+    width: 90%;
+    transform: unset;
+    margin-inline: auto;
+  }
+  .radarStill {
+    position: absolute;
+    inset: 0;
+    top: -10px;
+    width: 90%;
+    transform: unset;
+    margin-inline: auto;
+  }
+  .platformStill {
+    position: absolute;
+    inset: 0;
+    top: 0px;
+    width: 90%;
+    transform: unset;
+    margin-inline: auto;
+  }
+  .overlay {
+    height: 60vw;
+  }
+  .feature:nth-child(2) {
     grid-column: 1 / end;
     height: 275px;
   }
@@ -242,18 +287,20 @@
     grid-column: 1 / end;
     height: 360px;
   }
+  .feature:nth-child(5) {
+    grid-column: 1 / end;
+    height: 360px;
+  }
   .platform {
     width: 80%;
   }
   .radar {
     width: 80%;
   }
-  .overlay {
-    height: 100%;
-  }
   .crypto,
   .wallet {
-    width: 100vw;
+    width: 150vw;
+    top: -120px;
   }
   .bgText {
     font-size: 12vw;

@@ -10,3 +10,22 @@
   width: 100% !important;
   height: auto !important;
 }
+
+.fallback {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.fallback img {
+  width: 300%;
+  margin-left: -100%;
+  height: auto;
+}
+
+/* @media (max-width: 540px) {
+  .fallback img {
+    width: 200vh;
+    margin-left: 0;
+  }
+} */

@@ -3,99 +3,105 @@ import styles from "@/styles/Features.module.css"
 import Image from "next/image"
 
 import gsap from "gsap"
-import { useLayoutEffect } from "react"
+import { useLayoutEffect, useState } from "react"
 import Background from "./Background"
 
 function Features(props) {
+  const [isMobile, setIsMobile] = useState(false)
   useLayoutEffect(() => {
-    const fullTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".features",
-        scrub: 0.2,
-        start: "top bottom-=10%",
-        end: "bottom+=40% bottom",
-        refreshPriority: 97,
-        defaults: {
-          ease: "none",
+    if (window.innerWidth < 800) {
+      setIsMobile(true)
+    }
+    if (window.innerWidth > 800) {
+      const fullTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".features",
+          scrub: 0.2,
+          start: "top bottom-=10%",
+          end: "bottom+=40% bottom",
+          refreshPriority: 97,
+          defaults: {
+            ease: "none",
+          },
         },
-      },
-    })
+      })
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".features",
-        scrub: true,
-        start: "top bottom-=10%",
-        end: "bottom+=40% bottom",
-        refreshPriority: 97,
-        defaults: {
-          ease: "none",
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".features",
+          scrub: true,
+          start: "top bottom-=10%",
+          end: "bottom+=40% bottom",
+          refreshPriority: 97,
+          defaults: {
+            ease: "none",
+          },
         },
-      },
-    })
+      })
 
-    fullTl
-      .fromTo(
-        ".bgText > div:nth-child(2n)",
+      fullTl
+        .fromTo(
+          ".bgText > div:nth-child(2n)",
+          {
+            x: "-3vw",
+            opacity: 0,
+          },
+          {
+            x: "0vw",
+            opacity: 1,
+            ease: "linear",
+          },
+          "<50%"
+        )
+        .fromTo(
+          ".bgText > div:nth-child(2n + 1)",
+          {
+            x: "3vw",
+            opacity: 0,
+          },
+          {
+            x: "0vw",
+            opacity: 1,
+            ease: "linear",
+          },
+          "<"
+        )
+        .to(
+          ".crypto",
+          {
+            transform: "translateX(-50%) rotate(10deg)",
+            ease: "linear",
+          },
+          "<"
+        )
+        .to(
+          ".wallet",
+          {
+            transform: "translateX(-50%) rotate(-10deg)",
+            ease: "linear",
+          },
+          "<"
+        )
+
+      tl.fromTo(
+        ".features",
         {
-          x: "-3vw",
           opacity: 0,
+          scale: 0.95,
+          y: 100,
         },
         {
-          x: "0vw",
+          y: 0,
           opacity: 1,
-          ease: "linear",
-        },
-        "<50%"
-      )
-      .fromTo(
-        ".bgText > div:nth-child(2n + 1)",
-        {
-          x: "3vw",
-          opacity: 0,
-        },
-        {
-          x: "0vw",
-          opacity: 1,
-          ease: "linear",
-        },
-        "<"
-      )
-      .to(
-        ".crypto",
-        {
-          transform: "translateX(-50%) rotate(10deg)",
-          ease: "linear",
-        },
-        "<"
-      )
-      .to(
-        ".wallet",
-        {
-          transform: "translateX(-50%) rotate(-10deg)",
-          ease: "linear",
-        },
-        "<"
-      )
-
-    tl.fromTo(
-      ".features",
-      {
+          scale: 1,
+          ease: "power2.out",
+        }
+      ).to(".features", {
         opacity: 0,
         scale: 0.95,
-        y: 100,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        ease: "power2.out",
-      }
-    ).to(".features", {
-      opacity: 0,
-      scale: 0.95,
-      ease: "power2.in",
-    })
+        ease: "power2.in",
+      })
+    }
   }, [])
 
   props = props.data
@@ -129,27 +135,54 @@ function Features(props) {
         name={props.innovative}
         desc={props.innovativeDesc}
         anim={
-          <video className={styles.brain} autoPlay loop muted preload="auto">
-            <source src="/features/brain.mp4" />
-          </video>
+          !isMobile ? (
+            <video className={styles.brain} autoPlay loop muted preload="auto">
+              <source src="/features/brain.mp4" />
+            </video>
+          ) : (
+            <img
+              className={styles.brainStill}
+              src="/features/stills/brain.png"
+            ></img>
+          )
         }
       ></Feature>
       <Feature
         name={props.radar}
         desc={props.radarDesc}
         anim={
-          <video className={styles.radar} autoPlay loop muted preload="auto">
-            <source src="/features/radar.mp4" />
-          </video>
+          !isMobile ? (
+            <video className={styles.radar} autoPlay loop muted preload="auto">
+              <source src="/features/radar.mp4" />
+            </video>
+          ) : (
+            <img
+              className={styles.radarStill}
+              src="/features/stills/radar.png"
+            ></img>
+          )
         }
       ></Feature>
       <Feature
         name={props.platform}
         desc={props.platformDesc}
         anim={
-          <video className={styles.platform} autoPlay loop muted preload="auto">
-            <source src="/features/platform.mp4" />
-          </video>
+          !isMobile ? (
+            <video
+              className={styles.platform}
+              autoPlay
+              loop
+              muted
+              preload="auto"
+            >
+              <source src="/features/platform.mp4" />
+            </video>
+          ) : (
+            <img
+              className={styles.platformStill}
+              src="/features/stills/platform.png"
+            ></img>
+          )
         }
       ></Feature>
     </div>

@@ -7,88 +7,90 @@ import gsap from "gsap"
 
 function Desktop(props) {
   useLayoutEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".desktop",
-        pin: ".desktop",
-        start: "top top",
-        end: () => `+=${window.innerHeight * 2.5}`,
-        refreshPriority: 98,
-        scrub: true,
-        // onLeave: () =>
-        //   (document.querySelector(".desktop").style.display = "none"),
-        // onEnterBack: () =>
-        //   (document.querySelector(".desktop").style.display = "grid"),
-      },
-    })
-    tl.fromTo(
-      ".desktop > *:not(.desktopDivider)",
-      {
-        opacity: 0,
-        scale: 0.95,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        duration: 0.4,
-        ease: "power4.out",
-      }
-    )
-      .to(".firstScreen", {
-        opacity: 0.3,
-        scale: 0.95,
-        delay: 0.4,
-        y: "-5vh",
+    if (window.innerWidth > 800) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".desktop",
+          pin: ".desktop",
+          start: "top top",
+          end: () => `+=${window.innerHeight * 2.5}`,
+          refreshPriority: 98,
+          scrub: true,
+          // onLeave: () =>
+          //   (document.querySelector(".desktop").style.display = "none"),
+          // onEnterBack: () =>
+          //   (document.querySelector(".desktop").style.display = "grid"),
+        },
       })
-      .to(
-        ".desktopFadeOut",
+      tl.fromTo(
+        ".desktop > *:not(.desktopDivider)",
         {
           opacity: 0,
           scale: 0.95,
-          duration: 0.4,
-          y: "-5vh",
-        },
-        "<"
-      )
-      .fromTo(
-        ".desktopFadeIn",
-        {
-          y: "10vh",
-          scale: 0.9,
-          opacity: 0,
+          y: 100,
         },
         {
           opacity: 1,
           scale: 1,
+          y: 0,
           duration: 0.4,
-          y: "0vh",
-        },
-        "<"
+          ease: "power4.out",
+        }
       )
-      .to(
-        ".status p:first-child",
-        {
-          color: "#CACACE",
-        },
-        "<"
-      )
-      .to(
-        ".status p:last-child",
-        {
-          color: "#B56CEF",
-        },
-        "<"
-      )
-      .to(".desktop > *:not(.desktopDivider)", {
-        opacity: 0,
-        scale: 0.95,
-        y: -100,
-        duration: 0.4,
-        delay: 0.4,
-        ease: "power4.in",
-      })
+        .to(".firstScreen", {
+          opacity: 0.3,
+          scale: 0.95,
+          delay: 0.4,
+          y: "-5vh",
+        })
+        .to(
+          ".desktopFadeOut",
+          {
+            opacity: 0,
+            scale: 0.95,
+            duration: 0.4,
+            y: "-5vh",
+          },
+          "<"
+        )
+        .fromTo(
+          ".desktopFadeIn",
+          {
+            y: "10vh",
+            scale: 0.9,
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 0.4,
+            y: "0vh",
+          },
+          "<"
+        )
+        .to(
+          ".status p:first-child",
+          {
+            color: "#CACACE",
+          },
+          "<"
+        )
+        .to(
+          ".status p:last-child",
+          {
+            color: "#B56CEF",
+          },
+          "<"
+        )
+        .to(".desktop > *:not(.desktopDivider)", {
+          opacity: 0,
+          scale: 0.95,
+          y: -100,
+          duration: 0.4,
+          delay: 0.4,
+          ease: "power4.in",
+        })
+    }
   }, [])
 
   return (

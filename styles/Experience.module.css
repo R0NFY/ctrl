@@ -101,6 +101,7 @@
 
 @media (max-width: 800px) {
   .container {
+    margin-top: 180px;
     margin-bottom: 240px;
   }
   .container h2 {
@@ -124,6 +125,7 @@
 @media (max-width: 540px) {
   .container {
     margin-bottom: 180px;
+    margin-top: 120px;
     margin-top: 60px;
   }
   .container h2 {

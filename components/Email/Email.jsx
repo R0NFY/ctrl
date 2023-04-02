@@ -4,34 +4,36 @@ import { useLayoutEffect } from "react"
 
 function Email() {
   useLayoutEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".email",
-        start: () => `top top`,
-        end: "bottom bottom",
-        toggleActions: "play none reverse none",
-        refreshPriority: 91,
-        defaults: {
-          ease: "none",
+    if (window.innerWidth > 800) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".email",
+          start: () => `top top`,
+          end: "bottom bottom",
+          toggleActions: "play none reverse none",
+          refreshPriority: 91,
+          defaults: {
+            ease: "none",
+          },
         },
-      },
-    })
+      })
 
-    tl.fromTo(
-      ".email > *",
-      {
-        opacity: 0,
-        scale: 0.95,
-        y: 50,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        ease: "power2.inOut",
-        duration: 0.15,
-      }
-    )
+      tl.fromTo(
+        ".email > *",
+        {
+          opacity: 0,
+          scale: 0.95,
+          y: 50,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          ease: "power2.inOut",
+          duration: 0.15,
+        }
+      )
+    }
   }, [])
   return (
     <div className={`${styles.container} email`}>
