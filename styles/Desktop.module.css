@@ -71,7 +71,7 @@
   border-radius: 6px;
   border: 2px solid var(--light-lc);
   width: 100%;
-  aspect-ratio: 840 / 557;
+  /* aspect-ratio: 840 / 557; */
   height: auto;
 }
 
