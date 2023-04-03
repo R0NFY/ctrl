@@ -2,6 +2,7 @@ import styles from "@/styles/Monkey.module.css"
 import { useLayoutEffect } from "react"
 
 import gsap from "gsap"
+import Image from "next/image"
 
 function Monkey(props) {
   useLayoutEffect(() => {
@@ -55,8 +56,20 @@ function Monkey(props) {
       <div className={styles.mobileDivider}></div>
       <div className={`${styles.divider} monkeyDivider`}></div>
       <div className={styles.monkeys}>
-        <img src="/monkey/one.png" alt="card one" />
-        <img src="/monkey/two.png" alt="card two" />
+        <Image
+          sizes="(max-width: 800px) 100vw, 100vw"
+          src="/monkey/one.png"
+          width={1188}
+          height={742}
+          alt="card one"
+        />
+        <Image
+          sizes="(max-width: 800px) 100vw, 100vw"
+          src="/monkey/two.png"
+          width={1188}
+          height={742}
+          alt="card two"
+        />
       </div>
       <div className={styles.glow}></div>
     </div>
