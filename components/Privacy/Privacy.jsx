@@ -4,16 +4,40 @@ import BackgroundPrivacy from "./BackgroundPrivacy"
 import gsap from "gsap"
 import { useLayoutEffect, useState } from "react"
 
+import imgOne from "../../public/privacy/imgOne.png"
+import imgTwo from "../../public/privacy/imgTwo.png"
+import imgThree from "../../public/privacy/imgThree.png"
+import imgFour from "../../public/privacy/imgFour.png"
+import imgFive from "../../public/privacy/imgFive.png"
+import imgSix from "../../public/privacy/imgSix.png"
+import imgSeven from "../../public/privacy/imgSeven.png"
+import imgEight from "../../public/privacy/imgEight.png"
+import imgNine from "../../public/privacy/imgNine.png"
+import imgTen from "../../public/privacy/imgTen.png"
+
 function Privacy() {
   let animObj = { start: 1 }
   const imagesCount = 10
+  const imagesPreload = [
+    imgOne,
+    imgTwo,
+    imgThree,
+    imgFour,
+    imgFive,
+    imgSix,
+    imgSeven,
+    imgEight,
+    imgNine,
+    imgTen,
+  ]
   const [fingerSrc, setFingerSrc] = useState(animObj.start)
 
   useLayoutEffect(() => {
     if (window.innerWidth > 800) {
-      for (let i = 1; i < imagesCount; i++) {
-        new Image().src = `/privacy/${i}.png`
-      }
+      imagesPreload.forEach((imgFile) => {
+        const img = new Image()
+        img.src = imgFile
+      })
       const fullTl = gsap.timeline({
         scrollTrigger: {
           trigger: ".privacy",
@@ -173,7 +197,7 @@ function Privacy() {
       </div>
       <img
         className="privacyFadeIn"
-        src={"/privacy/" + fingerSrc + ".png"}
+        src={imagesPreload[fingerSrc - 1].src}
         alt=""
       />
       <img className={styles.last} src="/privacy/10Mobile.png" alt="" />
