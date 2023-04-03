@@ -176,7 +176,7 @@ function Privacy() {
         src={"/privacy/" + fingerSrc + ".png"}
         alt=""
       />
-      <img className={styles.last} src="/privacy/10.png" alt="" />
+      <img className={styles.last} src="/privacy/10Mobile.png" alt="" />
       <div className={styles.overlay}></div>
       <BackgroundPrivacy />
     </div>
