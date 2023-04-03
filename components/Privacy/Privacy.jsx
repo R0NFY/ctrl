@@ -36,7 +36,7 @@ function Privacy() {
     if (window.innerWidth > 800) {
       imagesPreload.forEach((imgFile) => {
         const img = new Image()
-        img.src = imgFile
+        img.src = imgFile.src
       })
       const fullTl = gsap.timeline({
         scrollTrigger: {
