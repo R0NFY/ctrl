@@ -16,4 +16,4 @@
   "https://assets.mailerlite.com/js/universal.js",
   "ml"
 )
-ml("account", "372690")
+ml("account", "4406842")

@@ -53,6 +53,10 @@
   position: relative;
 }
 
+.email button:hover {
+  cursor: pointer;
+}
+
 .inputWrapper {
   position: relative;
   z-index: 1;

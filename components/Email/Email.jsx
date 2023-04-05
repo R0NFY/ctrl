@@ -1,15 +1,14 @@
 import styles from "@/styles/Email.module.css"
 import gsap from "gsap"
 import { useLayoutEffect } from "react"
-import EmailStyling from "./EmailStyling"
 
 function Email() {
   useLayoutEffect(() => {
     const js = `
       function ml_webform_success_4406842() {
         // var $ = ml_jQuery || jQuery;
-        console.log('e')
         console.log(document.querySelector('.ml-subscribe-form-4406842 .ml-block-success'))
+        console.log(document.querySelector('.ml-subscribe-form-4406842 .ml-block-form'))
         document.querySelector('.ml-subscribe-form-4406842 .ml-block-success').style.display = 'block'
         document.querySelector('.ml-subscribe-form-4406842 .ml-block-form').style.display = 'none'
 
@@ -75,75 +74,79 @@ function Email() {
     //     <div className={`${styles.glow} emailGlow`}></div>
     //   </div>
     // </div>
-    <section id="signup" className="gradient-gray">
-      <EmailStyling />
+    <div id="signup" className={`${styles.container} email`}>
       <div
         id="mlb2-4406842"
         className="ml-subscribe-form ml-subscribe-form-4406842"
       >
-        <div className="ml-vertical-align-center">
-          <div
-            className="subscribe-form ml-block-success"
-            style={{ display: "none" }}
-          >
-            <div className="form-section">
-              <p>
-                Thank you, you have successfully subscribed to our announcement
-                list!
-              </p>
-            </div>
-          </div>
-          <form
-            className="ml-block-form"
-            action="https://landing.mailerlite.com/webforms/submit/4406842"
-            data-id="4406842"
-            data-code="4406842"
-            method="POST"
-            target="_blank"
-          >
-            <p className="signup-title">
-              Sign up for our announcement list and we'll let you know when we
-              launch!
+        <div
+          className="subscribe-form ml-block-success"
+          style={{ display: "none" }}
+        >
+          <div className="form-section">
+            <p>
+              Thank you, you have successfully subscribed to our announcement
+              list!
             </p>
-            <div className="subscribe-form">
-              <div className="form-section">
-                <div className="form-group ml-field-email ml-validate-required ml-validate-email">
-                  <input
-                    type="email"
-                    name="fields[email]"
-                    className="form-control signup-text"
-                    placeholder="Email address"
-                    autoComplete="email"
-                    spellCheck="false"
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                  />
-                  <input type="hidden" name="ml-submit" value="1" />
-                  <button type="submit" className="primary signup-button">
-                    Subscribe
-                  </button>
-                  <button
-                    disabled
-                    style={{ display: "none" }}
-                    type="button"
-                    className="loading"
-                  >
-                    Submitting...
-                    {/* <img
-                  src="https://static.mailerlite.com/images/rolling@2x.gif"
-                  alt="loading..."
-                  width="20"
-                  height="20"
-                  style={{ width: '20px', height: '20px' }}
-                /> */}
-                  </button>
-                </div>
+          </div>
+        </div>
+
+        <form
+          action="https://assets.mailerlite.com/jsonp/372690/forms/84519844643341426/subscribe"
+          data-id="4406842"
+          data-code="4406842"
+          method="POST"
+          target="_blank"
+          className="ml-block-form"
+          autoComplete="off"
+        >
+          <h2>Join the waitlist</h2>
+          <p>get updates on launch and more...</p>
+          <div className={styles.email}>
+            <div className={styles.glow}></div>
+            <div className={styles.inputWrapper}>
+              <input
+                name="fields[email]"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+                type="text"
+                autoComplete="off"
+                placeholder="Your Email"
+              />
+              <div className={`${styles.line} line`}></div>
+            </div>
+            <button type="submit">subscribe</button>
+          </div>
+          {/* <div className="subscribe-form">
+            <div className="form-section">
+              <div className="form-group ml-field-email ml-validate-required ml-validate-email">
+                <input
+                  type="email"
+                  name="fields[email]"
+                  className="form-control signup-text"
+                  placeholder="Email address"
+                  autoComplete="email"
+                  spellCheck="false"
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                />
+                <input type="hidden" name="ml-submit" value="1" />
+                <button type="submit">subscribe</button>
+                <button
+                  disabled
+                  style={{ display: "none" }}
+                  type="button"
+                  className="loading"
+                >
+                  Submitting...
+                </button>
               </div>
             </div>
-          </form>
-        </div>
+          </div> */}
+        </form>
       </div>
-    </section>
+    </div>
     // <div>
     //   <EmailStyling />
     //   <div
