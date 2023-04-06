@@ -134,6 +134,11 @@
   display: none;
 }
 
+.app {
+  z-index: 1000;
+  position: relative;
+}
+
 @media (max-width: 1280px) {
   .phone {
     width: 25vw;

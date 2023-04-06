@@ -149,7 +149,7 @@ function Mobile(props) {
             CONTROL<span>CONTROL</span>
           </p>
         </div>
-        <img className="app" src="/mobile/mobile.png" alt="" />
+        <img className={`${styles.app} app`} src="/mobile/mobile.png" alt="" />
       </div>
       <div className={`${styles.mobileNotifications} notifications`}>
         <img
