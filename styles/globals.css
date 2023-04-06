@@ -51,4 +51,8 @@ button {
   :root {
     --margin: 20px;
   }
+  body,
+  html {
+    overflow-x: visible;
+  }
 }

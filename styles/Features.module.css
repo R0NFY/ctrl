@@ -20,7 +20,7 @@
   left: calc(50% - var(--margin));
   transform: translateX(-50%);
   line-height: 110%;
-  opacity: 10%;
+  opacity: 15%;
   overflow: hidden;
 }
 
@@ -44,6 +44,8 @@
   grid-column: span 5;
   border-radius: 48px;
   overflow: hidden;
+  transform: translateZ(0);
+  isolation: isolate;
   position: relative;
   background-color: var(--dark-p);
   color: var(--light-p);
@@ -262,7 +264,7 @@
     position: absolute;
     inset: 0;
     top: -20px;
-    width: 90%;
+    width: 100%;
     transform: unset;
     margin-inline: auto;
   }
@@ -270,7 +272,7 @@
     position: absolute;
     inset: 0;
     top: -10px;
-    width: 90%;
+    width: 100%;
     transform: unset;
     margin-inline: auto;
   }
@@ -278,7 +280,8 @@
     position: absolute;
     inset: 0;
     top: 0px;
-    width: 90%;
+    width: 120%;
+    left: -10%;
     transform: unset;
     margin-inline: auto;
   }
@@ -303,12 +306,6 @@
   .feature:nth-child(5) {
     grid-column: 1 / end;
     height: 360px;
-  }
-  .platform {
-    width: 80%;
-  }
-  .radar {
-    width: 80%;
   }
   .crypto,
   .wallet {

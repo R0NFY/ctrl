@@ -35,14 +35,47 @@ function Monkey(props) {
           duration: 0.4,
           ease: "power4.out",
         }
-      ).to(".monkey > *:not(.monkeyDivider)", {
-        opacity: 0,
-        scale: 0.95,
-        y: -100,
-        duration: 0.4,
-        delay: 0.3,
-        ease: "power4.in",
-      })
+      )
+        .fromTo(
+          ".monkeyImages img:last-child",
+          {
+            opacity: 0,
+            scale: 0.95,
+            y: 100,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.2,
+            ease: "power4.out",
+          },
+          "<"
+        )
+        .fromTo(
+          ".monkeyImages img:first-child",
+          {
+            opacity: 0,
+            scale: 0.93,
+            y: 150,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.3,
+            ease: "power3.out",
+          },
+          "<"
+        )
+        .to(".monkey > *:not(.monkeyDivider)", {
+          opacity: 0,
+          scale: 0.95,
+          y: -100,
+          duration: 0.4,
+          delay: 0.3,
+          ease: "power4.in",
+        })
     }
   }, [])
   return (
@@ -55,7 +88,7 @@ function Monkey(props) {
       </div>
       <div className={styles.mobileDivider}></div>
       <div className={`${styles.divider} monkeyDivider`}></div>
-      <div className={styles.monkeys}>
+      <div className={`${styles.monkeys} monkeyImages`}>
         <Image
           sizes="(max-width: 800px) 100vw, 100vw"
           src="/monkey/one.png"

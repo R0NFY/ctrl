@@ -4,7 +4,7 @@ function Nav(props) {
   return (
     <nav
       className={`${styles.container} ${
-        props.theme == "light" ? "fade" : "darkFade"
+        props.theme == "light" ? "fade" : "darkFade darkNav"
       }`}
     >
       <img src={props.logo} alt="ctrl logo" />
@@ -15,6 +15,15 @@ function Nav(props) {
       >
         {props.data.link.urlCaption}
       </a>
+      <style jsx global>
+        {`
+          .darkNav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+          }
+        `}
+      </style>
     </nav>
   )
 }

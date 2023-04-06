@@ -36,7 +36,7 @@ export function Model(props) {
         scrub: 0.2,
         refreshPriority: 100,
         start: "top top",
-        end: () => `+=${document.querySelector(".intro").offsetHeight * 5}`,
+        end: () => `+=${document.querySelector(".intro").offsetHeight * 4}`,
         defaults: {
           ease: "none",
         },

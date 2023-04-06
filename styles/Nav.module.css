@@ -44,3 +44,9 @@
     border-width: 1px;
   }
 }
+
+@media (max-width: 540px) {
+  .container {
+    z-index: 100000 !important;
+  }
+}

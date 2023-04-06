@@ -84,6 +84,9 @@
 }
 
 @media (max-width: 540px) {
+  .container {
+    margin-top: 0;
+  }
   .container p {
     font-size: 64px;
   }

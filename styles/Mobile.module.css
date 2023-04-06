@@ -206,6 +206,11 @@
 }
 
 @media (max-width: 540px) {
+  .container {
+    height: auto;
+    margin-block: 120px;
+    overflow-x: hidden;
+  }
   .notifications img {
     margin-top: -48px;
     width: 75%;

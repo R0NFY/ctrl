@@ -15,6 +15,7 @@ import Copy from "@/components/Copy/Copy"
 import Monkey from "@/components/Monkey/Monkey"
 import Email from "@/components/Email/Email"
 import Loader from "@/components/Loader/Loader"
+import Nav from "@/components/Intro/Nav"
 
 const archivo = Archivo({ subsets: ["latin"], axes: ["wdth"] })
 
@@ -38,6 +39,9 @@ export default function Home({ data }) {
       </Head>
       <Loader />
       <Intro data={data[0].intro} />
+      {isMobile && (
+        <Nav logo="/logo/logo-dark.svg" data={data[0].intro} theme="dark" />
+      )}
       <Hero data={[data[0].intro, data[0].hero]} />
       {!isMobile && <Desktop data={data[0].desktop} />}
       {isMobile && <DesktopMobile data={data[0].desktop} />}

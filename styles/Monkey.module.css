@@ -148,6 +148,7 @@
 
 @media (max-width: 540px) {
   .container {
+    overflow-x: hidden;
     margin-top: 120px;
   }
 }
