@@ -52,6 +52,10 @@
   left: var(--margin);
 }
 
+.keyImage {
+  display: none;
+}
+
 @media (max-width: 1280px) {
   .container h1 {
     font-size: 18vw;
@@ -78,7 +82,25 @@
 }
 
 @media (max-width: 540px) {
+  .container {
+    overflow: hidden;
+    position: relative;
+  }
   .container h1 {
     margin-top: 10vh;
   }
+  .wrapper {
+    overflow: hidden;
+  }
+  .keyImage {
+    position: absolute;
+    display: block;
+    width: 300vw !important;
+    margin-left: -100%;
+    height: auto;
+    bottom: -10vh;
+  }
+  /* .fallback img { */
+  /* height: auto; */
+  /* } */
 }

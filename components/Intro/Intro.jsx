@@ -4,6 +4,7 @@ import Key from "./Key"
 
 import { useState, useLayoutEffect } from "react"
 import Fallback from "./Fallback"
+import Image from "next/image"
 
 function Intro(props) {
   const [isMobile, setIsMobile] = useState(false)
@@ -25,7 +26,15 @@ function Intro(props) {
             Take <span>Control</span>
           </h1>
           {!isMobile && <Key />}
-          {isMobile && <Fallback />}
+          <Image
+            width={2114}
+            height={1188}
+            src="/intro/key.png"
+            alt="ctrl key"
+            className={styles.keyImage}
+            sizes="(max-width: 800px) 300vw"
+          />
+          {/* {isMobile && <Fallback />} */}
           <p className={`${styles.floating} fade`}>{props.data.paragraph}</p>
         </div>
       </div>
