@@ -18,6 +18,7 @@
 .containerWrapper {
   position: relative;
   grid-column: 1 / 4;
+  will-change: transform, opacity;
 }
 
 .parasContainer {
@@ -73,6 +74,7 @@
   width: 100%;
   /* aspect-ratio: 840 / 557; */
   height: auto;
+  will-change: transform, opacity;
 }
 
 .imageWrapper img:nth-child(2) {
