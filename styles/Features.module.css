@@ -152,6 +152,10 @@
   );
 }
 
+.platformSpan img {
+  display: none;
+}
+
 @media (max-width: 1600px) {
   .crypto,
   .wallet {
@@ -256,6 +260,18 @@
     display: block;
     z-index: 1;
   }
+  .platformSpan video {
+    display: none;
+  }
+  .platformSpan img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    top: 0;
+    width: 80%;
+    margin-inline: auto;
+    height: auto;
+  }
 }
 
 @media (max-width: 540px) {
@@ -288,6 +304,9 @@
   .wallet {
     width: 150vw;
     top: -120px;
+  }
+  .platformSpan img {
+    width: 100%;
   }
   .bgText {
     font-size: 12vw;

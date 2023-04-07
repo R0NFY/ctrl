@@ -161,16 +161,19 @@ function Features(props) {
         name={props.platform}
         desc={props.platformDesc}
         anim={
-          <video
-            className={styles.platform}
-            autoPlay
-            playsInline
-            loop
-            muted
-            preload="auto"
-          >
-            <source src="/features/tiles.mp4" />
-          </video>
+          <span className={styles.platformSpan}>
+            <video
+              className={styles.platform}
+              autoPlay
+              playsInline
+              loop
+              muted
+              preload="auto"
+            >
+              <source src="/features/tiles.mp4" />
+            </video>
+            <img src="/features/stills/platform.png" alt="" />
+          </span>
         }
       ></Feature>
     </div>
