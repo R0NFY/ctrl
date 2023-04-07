@@ -129,7 +129,14 @@ function Features(props) {
         name={props.innovative}
         desc={props.innovativeDesc}
         anim={
-          <video className={styles.brain} autoPlay loop muted preload="auto">
+          <video
+            className={styles.brain}
+            autoPlay
+            playsInline
+            loop
+            muted
+            preload="auto"
+          >
             <source src="/features/brain.mp4" />
           </video>
         }
@@ -138,7 +145,14 @@ function Features(props) {
         name={props.radar}
         desc={props.radarDesc}
         anim={
-          <video className={styles.radar} autoPlay loop muted preload="auto">
+          <video
+            className={styles.radar}
+            autoPlay
+            playsInline
+            loop
+            muted
+            preload="auto"
+          >
             <source src="/features/radar.mp4" />
           </video>
         }
@@ -147,7 +161,14 @@ function Features(props) {
         name={props.platform}
         desc={props.platformDesc}
         anim={
-          <video className={styles.platform} autoPlay loop muted preload="auto">
+          <video
+            className={styles.platform}
+            autoPlay
+            playsInline
+            loop
+            muted
+            preload="auto"
+          >
             <source src="/features/platform.mp4" />
           </video>
         }
