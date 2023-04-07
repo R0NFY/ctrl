@@ -27,7 +27,7 @@ function Hero(props) {
 
   // animating everything
   useLayoutEffect(() => {
-    if (window.innerWidth > 800) {
+    setTimeout(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".hero",
@@ -46,6 +46,32 @@ function Hero(props) {
             (document.querySelector(".hero").style.display = "block"),
         },
       })
+      if (window.innerWidth < 800) {
+        const anotherTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".hero",
+            scrub: true,
+            refreshPriority: 100,
+            start: "top+=35% top",
+            end: "top+=65% top",
+            defaults: {
+              ease: "none",
+            },
+          },
+        })
+        anotherTl.fromTo(
+          ".darkNav",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          "<"
+        )
+      }
       tl.fromTo(
         ".hero",
         {
@@ -82,7 +108,7 @@ function Hero(props) {
         .to(
           p.current,
           {
-            scale: () => (window.innerWidth > 800 ? 0.42 : 0.6),
+            scale: () => (window.innerWidth > 800 ? 0.42 : 0.75),
             duration: 0.5,
             ease: "linear",
           },
@@ -117,9 +143,9 @@ function Hero(props) {
           duration: 0.2,
         })
         .to(
-          ".darkFade",
+          ".darkFade:not(.darkNav)",
           {
-            opacity: 0,
+            opacity: () => 0,
             duration: 0.2,
           },
           "<"
@@ -135,7 +161,7 @@ function Hero(props) {
           },
           "<"
         )
-    }
+    }, 100)
   }, [])
 
   return (

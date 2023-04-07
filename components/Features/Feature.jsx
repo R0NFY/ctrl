@@ -7,7 +7,9 @@ function Feature(props) {
       <h3>{props.name}</h3>
       <p>{props.desc}</p>
       <div className={styles.overlay}></div>
-      <div className={styles.glow}></div>
+      <div className={styles.glow}>
+        <img src="/blur.png" alt="" />
+      </div>
     </div>
   )
 }

@@ -85,7 +85,9 @@ function Email() {
             revolution.
           </p>
           <div className={styles.email}>
-            <div className={styles.glow}></div>
+            <div className={styles.glow}>
+              <img src="/blur.png" alt="" />
+            </div>
             <div className={styles.inputWrapper}>
               <input
                 name="fields[email]"

@@ -113,7 +113,9 @@ function Desktop(props) {
       </div>
       <div className={styles.mobileDivider}></div>
       <div className={`${styles.imageWrapper} desktopImageWrapper`}>
-        <div className={styles.glow}></div>
+        <div className={styles.glow}>
+          <img src="/blur.png" alt="" />
+        </div>
         <Image
           className="firstScreen"
           src="/desktop/portfolio.jpg"

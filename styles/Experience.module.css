@@ -103,6 +103,7 @@
   .container {
     margin-top: 180px;
     margin-bottom: 240px;
+    overflow-x: hidden;
   }
   .container h2 {
     -webkit-text-stroke: 1px var(--light-p);

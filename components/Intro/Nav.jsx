@@ -1,10 +1,18 @@
 import styles from "@/styles/Nav.module.css"
+import { useLayoutEffect, useState } from "react"
 
 function Nav(props) {
+  const [mobile, setMobile] = useState(false)
+
+  useLayoutEffect(() => {
+    if (window.innerWidth < 800) {
+      setMobile(true)
+    }
+  }, [])
   return (
     <nav
       className={`${styles.container} ${
-        props.theme == "light" ? "fade" : "darkFade darkNav"
+        props.theme == "light" ? "fade" : mobile ? "darkNav" : "darkFade"
       }`}
     >
       <img src={props.logo} alt="ctrl logo" />
@@ -17,10 +25,12 @@ function Nav(props) {
       </a>
       <style jsx global>
         {`
-          .darkNav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+          @media (max-width: 800px) {
+            .darkNav {
+              position: sticky;
+              top: 0;
+              z-index: 100;
+            }
           }
         `}
       </style>

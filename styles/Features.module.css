@@ -125,16 +125,31 @@
 }
 
 .glow {
-  width: 100%;
-  height: 40%;
-  bottom: 0;
   position: absolute;
-  z-index: 4;
-  background-color: var(--accent);
-  -webkit-filter: blur(150px);
-  -moz-filter: blur(150px);
-  -ms-filter: blur(150px);
-  filter: blur(150px);
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  transform: scale(1.75);
+}
+
+.glow > img {
+  width: 100%;
+  height: 100%;
+}
+
+.fade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: linear-gradient(
+    180deg,
+    rgba(38, 38, 38, 1) 0%,
+    rgba(38, 38, 38, 0) 20%,
+    rgba(38, 38, 38, 0) 80%,
+    rgba(38, 38, 38, 1) 100%
+  );
 }
 
 @media (max-width: 1600px) {
@@ -234,56 +249,16 @@
 
 @media (max-width: 800px) {
   .container {
-    margin-top: 180px;
+    margin-top: 80px;
   }
-  .glow {
-    display: none;
-  }
-  .brainStill {
-    width: 95%;
-    transform: translateY(20%);
-    margin-inline: auto;
-  }
-  .radarStill {
-    width: 80%;
-    transform: translateY(20%);
-    margin-inline: auto;
-  }
-  .platformStill {
-    width: 70%;
-    transform: translateY(40%);
-    margin-inline: auto;
+  .platform {
+    width: 100%;
   }
 }
 
 @media (max-width: 540px) {
   .container {
-    margin-top: 120px;
-  }
-  .brainStill {
-    position: absolute;
-    inset: 0;
-    top: -20px;
-    width: 100%;
-    transform: unset;
-    margin-inline: auto;
-  }
-  .radarStill {
-    position: absolute;
-    inset: 0;
-    top: -10px;
-    width: 100%;
-    transform: unset;
-    margin-inline: auto;
-  }
-  .platformStill {
-    position: absolute;
-    inset: 0;
-    top: 0px;
-    width: 120%;
-    left: -10%;
-    transform: unset;
-    margin-inline: auto;
+    margin-top: 48px;
   }
   .overlay {
     height: 60vw;

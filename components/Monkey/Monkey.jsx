@@ -22,7 +22,7 @@ function Monkey(props) {
         },
       })
       tl.fromTo(
-        ".monkey > *:not(.monkeyDivider)",
+        ".monkey > *:not(.monkeyDivider):not(.monkeyBlur)",
         {
           opacity: 0,
           scale: 0.95,
@@ -36,6 +36,99 @@ function Monkey(props) {
           ease: "power4.out",
         }
       )
+        .fromTo(
+          ".monkeyBlur",
+          {
+            opacity: 0,
+            scale: 1,
+          },
+          {
+            scale: 2.75,
+            opacity: 1,
+            duration: 0.4,
+            ease: "power4.out",
+          },
+          "<"
+        )
+        .fromTo(
+          ".monkeyImages img:last-child",
+          {
+            opacity: 0,
+            scale: 0.95,
+            y: 100,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.2,
+            ease: "power4.out",
+          },
+          "<"
+        )
+        .fromTo(
+          ".monkeyImages img:first-child",
+          {
+            opacity: 0,
+            scale: 0.93,
+            y: 150,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.3,
+            ease: "power3.out",
+          },
+          "<"
+        )
+        .to(".monkey > *:not(.monkeyDivider)", {
+          opacity: 0,
+          scale: 0.95,
+          y: -100,
+          duration: 0.4,
+          delay: 0.3,
+          ease: "power4.in",
+        })
+    } else {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".monkey",
+          start: "top+=30% bottom",
+          end: "top+=150% bottom",
+          scrub: 0.2,
+          refreshPriority: 93,
+        },
+      })
+      tl.fromTo(
+        ".monkey > *:not(.monkeyDivider):not(.monkeyBlur)",
+        {
+          opacity: 0,
+          scale: 0.95,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power4.out",
+        }
+      )
+        .fromTo(
+          ".monkeyBlur",
+          {
+            opacity: 0,
+            scale: 1,
+          },
+          {
+            scale: 2,
+            opacity: 1,
+            duration: 0.4,
+            ease: "power4.out",
+          },
+          "<"
+        )
         .fromTo(
           ".monkeyImages img:last-child",
           {
@@ -104,7 +197,9 @@ function Monkey(props) {
           alt="card two"
         />
       </div>
-      <div className={styles.glow}></div>
+      <div className={`${styles.glow} monkeyBlur`}>
+        <img src="/blur.png" alt="" />
+      </div>
     </div>
   )
 }

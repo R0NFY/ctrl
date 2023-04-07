@@ -92,21 +92,23 @@
   transform: translate(4px, 4px);
 }
 
-.lock img {
+.lock > img {
   width: 10vw;
   z-index: 1;
 }
 
 .glow {
   position: absolute;
-  height: 40%;
-  width: 80%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--accent);
-  filter: blur(100px);
+  top: 10%;
+  height: 80%;
+  width: 100%;
   z-index: 0;
+  transform: scale(3);
+}
+
+.glow > img {
+  width: 100%;
+  height: 100%;
 }
 
 .phone > img {
@@ -124,7 +126,7 @@
   transform: translateY(-50%);
 }
 
-.notifications img {
+.notifications > img {
   margin-top: -64px;
   width: 100%;
   height: auto;
@@ -158,7 +160,11 @@
 
 @media (max-width: 800px) {
   .glow {
-    display: none;
+    transform: scale(3.5);
+  }
+  .container {
+    overflow: hidden;
+    padding-bottom: 10vh;
   }
   .notifications {
     display: none;
@@ -173,7 +179,7 @@
     margin-top: -24px;
   }
 
-  .mobileNotifications img {
+  .mobileNotifications > img {
     margin-top: -12px;
     width: 100%;
     margin-inline: auto;
@@ -212,12 +218,18 @@
 }
 
 @media (max-width: 540px) {
+  .app {
+    z-index: 0;
+  }
   .container {
     height: auto;
     margin-block: 120px;
     overflow-x: hidden;
   }
-  .notifications img {
+  .notifications {
+    z-index: 100;
+  }
+  .notifications > img {
     margin-top: -48px;
     width: 75%;
     margin-inline: auto;

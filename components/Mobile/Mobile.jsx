@@ -103,6 +103,47 @@ function Mobile(props) {
           delay: 0.1,
           ease: "power4.in",
         })
+    } else {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".mobile",
+          start: "top+=30% bottom",
+          end: "top+=150% bottom",
+          scrub: 0.2,
+          refreshPriority: 95,
+        },
+      })
+      tl.fromTo(
+        ".mobile > *",
+        {
+          opacity: 0,
+          scale: 0.95,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          ease: "power2.out",
+        }
+      ).fromTo(
+        ".notifications img",
+        {
+          y: "5vh",
+          opacity: 0,
+          scale: 0.95,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: "0vh",
+          stagger: {
+            each: 0.2,
+            ease: "linear",
+          },
+        },
+        "50%"
+      )
     }
   }, [])
 
@@ -140,7 +181,9 @@ function Mobile(props) {
       <div className={`${styles.divider} mobileDivider`}></div>
       <div className={`${styles.mobileDivider}`}></div>
       <div className={styles.phone}>
-        <div className={styles.glow}></div>
+        <div className={styles.glow}>
+          <img src="/blur.png" alt="" />
+        </div>
         <img className={`${styles.bars} bars`} src="/mobile/phone.svg" alt="" />
         <div className={`${styles.lock} lock`}>
           <p>TAKE</p>

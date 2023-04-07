@@ -2,8 +2,7 @@ import { Canvas } from "@react-three/fiber"
 import { Model } from "./Model.jsx"
 
 import styles from "styles/Key.module.css"
-import { CameraControls, useHelper } from "@react-three/drei"
-import { DirectionalLightHelper, PointLightHelper } from "three"
+import { useHelper } from "@react-three/drei"
 
 import * as THREE from "three"
 

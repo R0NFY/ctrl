@@ -48,10 +48,6 @@
 }
 
 @media (max-width: 800px) {
-  .container {
-    height: auto;
-    margin-block: 180px;
-  }
   .textContainer {
     max-width: 100%;
   }
@@ -61,9 +57,6 @@
 }
 
 @media (max-width: 540px) {
-  .container {
-    margin-block: 120px;
-  }
   .container p {
     font-size: 24px;
   }

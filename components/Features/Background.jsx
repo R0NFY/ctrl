@@ -3,7 +3,7 @@ import styles from "@/styles/Features.module.css"
 function Background() {
   return (
     <div className={`${styles.bgText} bgText`}>
-      {" "}
+      <span className={styles.fade}></span>
       <div className={styles.line}>
         <span>Innovative Strategy</span>
         <span>Innovative Strategy</span>

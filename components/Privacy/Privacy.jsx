@@ -33,136 +33,134 @@ function Privacy() {
   const [fingerSrc, setFingerSrc] = useState(animObj.start)
 
   useLayoutEffect(() => {
-    if (window.innerWidth > 800) {
-      imagesPreload.forEach((imgFile) => {
-        const img = new Image()
-        img.src = imgFile.src
-      })
-      const fullTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".privacy",
-          pin: ".privacy",
-          scrub: true,
-          start: "top top",
-          end: () => `+=${window.innerHeight * 3}`,
-          refreshPriority: 94,
-          defaults: {
-            ease: "none",
-          },
+    imagesPreload.forEach((imgFile) => {
+      const img = new Image()
+      img.src = imgFile.src
+    })
+    const fullTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".privacy",
+        pin: ".privacy",
+        scrub: true,
+        start: "top top",
+        end: () => `+=${window.innerHeight * 3}`,
+        refreshPriority: 94,
+        defaults: {
+          ease: "none",
         },
-      })
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".privacy",
-          scrub: true,
-          start: "top top",
-          end: () => `+=${window.innerHeight * 3}`,
-          refreshPriority: 94,
-          defaults: {
-            ease: "none",
-          },
+      },
+    })
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".privacy",
+        scrub: true,
+        start: "top top",
+        end: () => `+=${window.innerHeight * 3}`,
+        refreshPriority: 94,
+        defaults: {
+          ease: "none",
         },
-      })
-      fullTl
-        .fromTo(
-          ".bgPrivacyText > div:nth-child(2n)",
-          {
-            x: "-3vw",
-            opacity: 0,
-          },
-          {
-            x: "0vw",
-            opacity: 1,
-            ease: "linear",
-          },
-          "<50%"
-        )
-        .fromTo(
-          ".bgPrivacyText > div:nth-child(2n + 1)",
-          {
-            x: "0vw",
-            opacity: 0,
-          },
-          {
-            x: "-3vw",
-            opacity: 1,
-            ease: "linear",
-          },
-          "<"
-        )
-        .fromTo(
-          ".privacyFadeIn",
-          {
-            opacity: 0,
-            scale: 0.95,
-            y: 100,
-          },
-          {
-            opacity: 1,
-            scale: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "power4.out",
-          },
-          "<"
-        )
-        .to(
-          animObj,
-          {
-            start: imagesCount,
-            onUpdate: () => {
-              if (Math.round(animObj.start) != fingerSrc) {
-                setFingerSrc(Math.round(animObj.start))
-              }
-            },
-            opacity: 1,
-            ease: "linear",
-          },
-          "<"
-        )
-
-      tl.to(
-        ".privacy > div > p:nth-child(1) > span",
+      },
+    })
+    fullTl
+      .fromTo(
+        ".bgPrivacyText > div:nth-child(2n)",
         {
-          color: "#B56CEF",
-          duration: "none",
-          delay: 0.1,
-          stagger: 0.2,
+          x: "-3vw",
+          opacity: 0,
+        },
+        {
+          x: "0vw",
+          opacity: 1,
+          ease: "linear",
+        },
+        "<50%"
+      )
+      .fromTo(
+        ".bgPrivacyText > div:nth-child(2n + 1)",
+        {
+          x: "0vw",
+          opacity: 0,
+        },
+        {
+          x: "-3vw",
+          opacity: 1,
+          ease: "linear",
         },
         "<"
       )
-        .to(".privacy > div > p:nth-child(2) > span", {
-          color: "#B56CEF",
-          duration: "none",
-          stagger: 0.2,
-        })
-        .to(".bgPrivacyText", {
+      .fromTo(
+        ".privacyFadeIn",
+        {
           opacity: 0,
+          scale: 0.95,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power4.out",
+        },
+        "<"
+      )
+      .to(
+        animObj,
+        {
+          start: imagesCount,
+          onUpdate: () => {
+            if (Math.round(animObj.start) != fingerSrc) {
+              setFingerSrc(Math.round(animObj.start))
+            }
+          },
+          opacity: 1,
+          ease: "linear",
+        },
+        "<"
+      )
+
+    tl.to(
+      ".privacy > div > p:nth-child(1) > span",
+      {
+        color: "#B56CEF",
+        duration: "none",
+        delay: 0.1,
+        stagger: 0.2,
+      },
+      "<"
+    )
+      .to(".privacy > div > p:nth-child(2) > span", {
+        color: "#B56CEF",
+        duration: "none",
+        stagger: 0.2,
+      })
+      .to(".bgPrivacyText", {
+        opacity: 0,
+        ease: "power2.in",
+        duration: 0.6,
+      })
+      .to(
+        ".privacy > div",
+        {
+          opacity: 0,
+          y: 100,
+          scale: 0.95,
+          duration: 1,
           ease: "power2.in",
-          duration: 0.6,
-        })
-        .to(
-          ".privacy > div",
-          {
-            opacity: 0,
-            y: 100,
-            scale: 0.95,
-            duration: 1,
-            ease: "power2.in",
-          },
-          "<"
-        )
-        .to(
-          ".privacy img",
-          {
-            scale: 5,
-            opacity: 0,
-            ease: "power3.in",
-            duration: 1.5,
-          },
-          "<"
-        )
-    }
+        },
+        "<"
+      )
+      .to(
+        ".privacy img",
+        {
+          scale: 5,
+          opacity: 0,
+          ease: "power3.in",
+          duration: 1.5,
+        },
+        "<"
+      )
   }, [])
 
   return (
@@ -200,7 +198,7 @@ function Privacy() {
         src={imagesPreload[fingerSrc - 1].src}
         alt=""
       />
-      <img className={styles.last} src="/privacy/10Mobile.png" alt="" />
+      {/* <img className={styles.last} src="/privacy/10Mobile.png" alt="" /> */}
       <div className={styles.overlay}></div>
       <BackgroundPrivacy />
     </div>

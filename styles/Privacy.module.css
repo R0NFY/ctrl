@@ -61,25 +61,19 @@
 
 @media (max-width: 800px) {
   .container {
-    margin-top: 240px;
+    overflow: hidden;
+    margin-top: 200px;
   }
   .container p {
     font-size: 80px;
   }
   .container img {
-    display: none;
     width: 230px;
     margin-top: -420px;
-  }
-  .last {
-    display: block !important;
   }
   .overlay {
     width: 50vw;
     height: 40vh;
-  }
-  .heading {
-    color: var(--accent);
   }
 }
 

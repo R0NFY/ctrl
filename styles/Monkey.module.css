@@ -44,17 +44,16 @@
 
 .glow {
   position: absolute;
-  height: 80%;
-  width: 90%;
-  /* top: 50%; */
-  /* transform: translateY(-50%); */
-  right: -40%;
-  background-color: var(--accent);
-  -webkit-filter: blur(150px);
-  -moz-filter: blur(150px);
-  -ms-filter: blur(150px);
-  filter: blur(150px);
+  height: 100%;
+  width: 100%;
   z-index: 0;
+  transform: scale(1);
+  right: -40%;
+}
+
+.glow > img {
+  width: 100%;
+  height: 100%;
 }
 
 .monkeys {
@@ -90,16 +89,20 @@
 }
 
 @media (max-width: 800px) {
-  .glow {
-    display: none;
-  }
   .container {
     grid-template-columns: auto;
     grid-auto-flow: column;
     display: block;
     width: calc(100% - var(--margin) * 2);
     min-height: auto;
-    margin-top: 180px;
+    padding-top: 180px;
+    padding-bottom: 25vw;
+    overflow: hidden;
+  }
+  .glow {
+    bottom: 18vw;
+    right: 0;
+    height: 60%;
   }
   .parasContainer {
     margin-top: 10vw;
@@ -132,23 +135,10 @@
   .monkeys img:last-child {
     margin-top: -35vw;
   }
-  .glow {
-    height: 60%;
-    width: 100%;
-    top: auto;
-    transform: unset;
-    right: unset;
-    bottom: 0;
-    background-color: var(--accent);
-    filter: blur(150px);
-    z-index: 1;
-    margin-inline: auto;
-  }
 }
 
 @media (max-width: 540px) {
   .container {
-    overflow-x: hidden;
     margin-top: 120px;
   }
 }

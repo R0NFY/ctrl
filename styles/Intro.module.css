@@ -52,10 +52,6 @@
   left: var(--margin);
 }
 
-.keyImage {
-  display: none;
-}
-
 @media (max-width: 1280px) {
   .container h1 {
     font-size: 18vw;
@@ -100,7 +96,4 @@
     height: auto;
     bottom: -10vh;
   }
-  /* .fallback img { */
-  /* height: auto; */
-  /* } */
 }

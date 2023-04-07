@@ -6,53 +6,51 @@ import Lines from "./Lines"
 
 function Experience() {
   useLayoutEffect(() => {
-    if (window.innerWidth > 800) {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".experience",
-          scrub: 0.2,
-          start: "top bottom",
-          end: "bottom+=10% top",
-          refreshPriority: 96,
-          defaults: {
-            ease: "none",
-          },
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".experience",
+        scrub: 0.2,
+        start: "top bottom",
+        end: "bottom+=10% top",
+        refreshPriority: 96,
+        defaults: {
+          ease: "none",
         },
-      })
+      },
+    })
 
-      tl.fromTo(
-        ".wordsEven",
+    tl.fromTo(
+      ".wordsEven",
+      {
+        x: "-20vw",
+      },
+      {
+        x: "-18vw",
+        ease: "linear",
+      }
+    )
+      .fromTo(
+        ".wordsOdd",
+        {
+          x: "-15vw",
+        },
         {
           x: "-20vw",
+          ease: "linear",
         },
+        "<"
+      )
+      .fromTo(
+        ".wordsThree",
         {
           x: "-18vw",
+        },
+        {
+          x: "-21vw",
           ease: "linear",
-        }
+        },
+        "<"
       )
-        .fromTo(
-          ".wordsOdd",
-          {
-            x: "-15vw",
-          },
-          {
-            x: "-20vw",
-            ease: "linear",
-          },
-          "<"
-        )
-        .fromTo(
-          ".wordsThree",
-          {
-            x: "-18vw",
-          },
-          {
-            x: "-21vw",
-            ease: "linear",
-          },
-          "<"
-        )
-    }
   }, [])
 
   return (

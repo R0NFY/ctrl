@@ -1,11 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef } from "react"
-import {
-  useGLTF,
-  PerspectiveCamera,
-  useAnimations,
-  useScroll,
-} from "@react-three/drei"
-import { act, useFrame } from "@react-three/fiber"
+import { useGLTF, PerspectiveCamera, useAnimations } from "@react-three/drei"
+import { useFrame } from "@react-three/fiber"
 
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
@@ -34,7 +29,7 @@ export function Model(props) {
         trigger: ".intro",
         pin: ".intro",
         scrub: 0.2,
-        refreshPriority: 100,
+        refreshPriority: 101,
         start: "top top",
         end: () => `+=${document.querySelector(".intro").offsetHeight * 4}`,
         defaults: {
