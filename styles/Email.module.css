@@ -145,6 +145,7 @@
 @media (max-width: 800px) {
   .container {
     margin-top: 180px;
+    overflow: hidden;
   }
   .glow {
     transform: scale(1.5);

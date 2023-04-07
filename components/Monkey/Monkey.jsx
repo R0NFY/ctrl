@@ -122,7 +122,7 @@ function Monkey(props) {
             scale: 1,
           },
           {
-            scale: 2,
+            scale: 1.5,
             opacity: 1,
             duration: 0.4,
             ease: "power4.out",
