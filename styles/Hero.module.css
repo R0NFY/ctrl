@@ -71,6 +71,7 @@
   }
   .container {
     margin-top: -50vh;
+    overflow: hidden;
   }
   .container p {
     font-size: 24px;
