@@ -9,8 +9,8 @@ function DesktopMobile(props) {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".mobileDesktop",
-        start: "top bottom",
-        end: "top+=50% bottom",
+        start: "top+=20% bottom",
+        end: "top+=80% bottom",
         refreshPriority: 98,
         scrub: true,
         // onLeave: () =>
