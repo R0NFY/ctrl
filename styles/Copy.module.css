@@ -54,6 +54,9 @@
   .container p {
     font-size: 28px;
   }
+  .container {
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 540px) {
