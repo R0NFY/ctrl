@@ -169,7 +169,7 @@ function Features(props) {
             muted
             preload="auto"
           >
-            <source src="/features/platform.mp4" />
+            <source src="/features/plat.mp4" />
           </video>
         }
       ></Feature>
