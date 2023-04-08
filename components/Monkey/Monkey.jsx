@@ -94,7 +94,7 @@ function Monkey(props) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".monkey",
-          start: "top+=30% bottom",
+          start: "top+=45% bottom",
           end: "top+=150% bottom",
           scrub: 0.2,
           refreshPriority: 93,

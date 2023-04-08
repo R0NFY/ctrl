@@ -36,6 +36,11 @@
   height: auto;
 }
 
+.elevateContainer .experience {
+  width: 100%;
+  z-index: 2;
+}
+
 .wrapper {
   position: relative;
   display: grid;
@@ -53,7 +58,7 @@
 .overlay {
   height: 60vh;
   width: 100vw;
-  bottom: 0;
+  bottom: -5vh;
   position: absolute;
   background: linear-gradient(
     180deg,
