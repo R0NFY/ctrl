@@ -7,7 +7,6 @@
 }
 
 .textContainer {
-  overflow: hidden;
   max-width: 60%;
   position: relative;
   margin-inline: var(--margin);

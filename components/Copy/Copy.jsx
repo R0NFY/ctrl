@@ -35,7 +35,7 @@ function Copy(props) {
           "linear-gradient(to bottom, #460D72 1.04%, #9E3EEA 9.9%, #E4C8F9 67.19%)",
         ease: "linear",
       })
-      .to(".copy", {
+      .to(".copy  p", {
         scale: 5,
         autoAlpha: 0,
         ease: "power2.in",
