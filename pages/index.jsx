@@ -43,7 +43,7 @@ export default function Home({ data }) {
         ></meta>
       </Head>
       <Loader />
-      <Intro data={data[0].intro} />
+      {/* <Intro data={data[0].intro} />
       {isMobile && (
         <Nav logo="/logo/logo-dark.svg" data={data[0].intro} theme="dark" />
       )}
@@ -53,9 +53,9 @@ export default function Home({ data }) {
       <Features data={data[0].features} />
       <Experience />
       <Mobile data={data[0].mobile} />
-      <Privacy />
+      <Privacy /> */}
       <Monkey data={data[0].monkey} />
-      <Copy data={data[0].copy} />
+      {/* <Copy data={data[0].copy} /> */}
       <Email />
       <style jsx global>
         {`
