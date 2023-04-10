@@ -18,6 +18,7 @@
 .containerWrapper {
   position: relative;
   grid-column: 1 / 4;
+  z-index: 1;
 }
 
 .parasContainer {

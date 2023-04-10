@@ -12,9 +12,6 @@ function Copy(props) {
         pin: ".copy",
         start: "top top",
         end: () => `+=${window.innerHeight * 2}`,
-        onLeave: () => (document.querySelector(".copy").style.display = "none"),
-        onEnterBack: () =>
-          (document.querySelector(".copy").style.display = "grid"),
         refreshPriority: 92,
         defaults: {
           ease: "none",
@@ -40,7 +37,7 @@ function Copy(props) {
       })
       .to(".copy", {
         scale: 5,
-        opacity: 0,
+        autoAlpha: 0,
         ease: "power2.in",
       })
   }, [])
@@ -48,7 +45,6 @@ function Copy(props) {
     <div className={`${styles.container} copy`}>
       <div className={styles.textContainer}>
         <p>{props.data.copy}</p>
-        <div className={styles.overlay}></div>
       </div>
     </div>
   )

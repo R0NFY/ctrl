@@ -55,7 +55,7 @@ export default function Home({ data }) {
       <Mobile data={data[0].mobile} />
       <Privacy />
       <Monkey data={data[0].monkey} />
-      {/* <Copy data={data[0].copy} /> */}
+      <Copy data={data[0].copy} />
       <Email />
       <style jsx global>
         {`

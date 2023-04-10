@@ -35,10 +35,6 @@ export function Model(props) {
         defaults: {
           ease: "none",
         },
-        onLeave: () =>
-          (document.querySelector(".intro").style.display = "none"),
-        onEnterBack: () =>
-          (document.querySelector(".intro").style.display = "block"),
       },
     })
 
@@ -69,7 +65,7 @@ export function Model(props) {
         {
           backgroundColor: "#262626",
           ease: "power2.in",
-          opacity: 0,
+          autoAlpha: 0,
           duration: 0.2,
         },
         "<25%"

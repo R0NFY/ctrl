@@ -39,11 +39,6 @@ function Hero(props) {
           defaults: {
             ease: "none",
           },
-          onLeave: () => {
-            document.querySelector(".hero").style.display = "none"
-          },
-          onEnterBack: () =>
-            (document.querySelector(".hero").style.display = "block"),
         },
       })
       if (window.innerWidth < 800) {
@@ -139,13 +134,13 @@ function Hero(props) {
         )
 
         .to(".elevate:not(:last-child)", {
-          opacity: 0,
+          autoAlpha: 0,
           duration: 0.2,
         })
         .to(
           ".darkFade:not(.darkNav)",
           {
-            opacity: () => 0,
+            autoAlpha: 0,
             duration: 0.2,
           },
           "<"
@@ -155,7 +150,7 @@ function Hero(props) {
           {
             zIndex: 10000,
             scale: 10,
-            opacity: 0,
+            autoAlpha: 0,
             ease: "power4.in",
             duration: 0.5,
           },
