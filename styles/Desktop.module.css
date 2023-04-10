@@ -110,7 +110,6 @@
     grid-template-columns: auto;
     grid-auto-flow: column;
     display: block;
-    width: 100%;
     padding: 2px;
     margin-top: 240px;
     height: auto;
