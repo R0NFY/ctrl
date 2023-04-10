@@ -50,10 +50,11 @@ function Hero(props) {
         const anotherTl = gsap.timeline({
           scrollTrigger: {
             trigger: ".hero",
-            scrub: true,
             refreshPriority: 100,
             start: "top+=35% top",
-            end: "top+=65% top",
+            end: "top+=50% top",
+            markers: true,
+            toggleActions: "play none reverse none",
             defaults: {
               ease: "none",
             },
@@ -66,8 +67,8 @@ function Hero(props) {
           },
           {
             opacity: 1,
-            duration: 0.4,
-            ease: "power2.out",
+            duration: 0.33,
+            ease: "power2.inOut",
           },
           "<"
         )
