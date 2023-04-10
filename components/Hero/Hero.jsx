@@ -53,7 +53,6 @@ function Hero(props) {
             refreshPriority: 100,
             start: "top+=35% top",
             end: "top+=50% top",
-            markers: true,
             toggleActions: "play none reverse none",
             defaults: {
               ease: "none",
