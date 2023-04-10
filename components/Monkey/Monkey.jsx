@@ -87,7 +87,7 @@ function Monkey(props) {
           scale: 0.95,
           y: -100,
           duration: 0.4,
-          delay: 0.3,
+          delay: 0.1,
           ease: "power4.in",
         })
     } else {

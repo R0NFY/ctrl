@@ -95,14 +95,18 @@ function Mobile(props) {
           },
           "50%"
         )
-        .to(".mobile > *:not(.mobileDivider)", {
-          opacity: 0,
-          scale: 0.95,
-          y: -100,
-          duration: 0.4,
-          delay: 0.1,
-          ease: "power4.in",
-        })
+        .to(
+          ".mobile > *:not(.mobileDivider)",
+          {
+            opacity: 0,
+            scale: 0.95,
+            y: -100,
+            duration: 0.6,
+            delay: 0.1,
+            ease: "power4.in",
+          },
+          "<75%"
+        )
     } else {
       const tl = gsap.timeline({
         scrollTrigger: {
