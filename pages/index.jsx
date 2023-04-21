@@ -50,13 +50,13 @@ export default function Home({ data }) {
       <Hero data={[data[0].intro, data[0].hero]} />
       {!isMobile && <Desktop data={data[0].desktop} />}
       {isMobile && <DesktopMobile data={data[0].desktop} />}
-      <Features data={data[0].features} />
+      {/* <Features data={data[0].features} /> */}
       <Experience />
       <Mobile data={data[0].mobile} />
       <Privacy />
       <Monkey data={data[0].monkey} />
       <Copy data={data[0].copy} />
-      <Email />
+      <Email data={data[0].contact} />
       <style jsx global>
         {`
           :root {

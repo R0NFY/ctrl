@@ -2,7 +2,7 @@ import styles from "@/styles/Email.module.css"
 import gsap from "gsap"
 import { useLayoutEffect } from "react"
 
-function Email() {
+function Email(props) {
   useLayoutEffect(() => {
     const js = `
       function ml_webform_success_4406842() {
@@ -103,6 +103,15 @@ function Email() {
             <button type="submit">subscribe</button>
           </div>
         </form>
+      </div>
+      <div className={styles.footer}>
+        <p className={styles.contact}>
+          If you have any questions,{" "}
+          <a href={props.data.contact} target="_blank">
+            get in touch with us
+          </a>
+        </p>
+        <p className={styles.copyright}>All right reserved. CTRL. 2022-2023</p>
       </div>
     </div>
   )

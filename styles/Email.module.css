@@ -105,6 +105,30 @@
   height: 100%;
 }
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  bottom: 36px;
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+.copyright {
+  color: var(--light-lc);
+}
+
+.contact a {
+  text-decoration: underline;
+}
+
+.contact a:hover {
+  color: var(--light-lc);
+}
+
 @media (max-width: 1280px) {
   .container h2 {
     font-size: 96px;
@@ -121,6 +145,9 @@
   }
   .email {
     margin-top: 150px;
+  }
+  .footer p {
+    font-size: 14px;
   }
 }
 
@@ -139,6 +166,9 @@
   }
   .email {
     margin-top: 120px;
+  }
+  .footer p {
+    font-size: 13px;
   }
 }
 
@@ -167,5 +197,12 @@
   }
   .email {
     margin-top: 60px;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .footer p {
+    font-size: 12px;
   }
 }
