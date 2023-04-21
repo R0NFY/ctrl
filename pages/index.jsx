@@ -53,9 +53,9 @@ export default function Home({ data }) {
       <Features data={data[0].features} />
       <Experience />
       <Mobile data={data[0].mobile} />
-      <Privacy /> */}
-      <Monkey data={data[0].monkey} />
-      {/* <Copy data={data[0].copy} /> */}
+      <Privacy />
+      <Monkey data={data[0].monkey} /> */}
+      <Copy data={data[0].copy} />
       <Email data={data[0].contact} />
       <style jsx global>
         {`
