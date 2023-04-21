@@ -61,6 +61,9 @@ function Email(props) {
         id="mlb2-4406842"
         className="ml-subscribe-form ml-subscribe-form-4406842"
       >
+        <div className={styles.glow}>
+          <img src="/blur.png" alt="" />
+        </div>
         <div
           className="subscribe-form ml-block-success"
           style={{ display: "none" }}
@@ -85,9 +88,6 @@ function Email(props) {
             revolution.
           </p>
           <div className={styles.email}>
-            <div className={styles.glow}>
-              <img src="/blur.png" alt="" />
-            </div>
             <div className={styles.inputWrapper}>
               <input
                 name="fields[email]"

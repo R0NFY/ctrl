@@ -4,7 +4,6 @@
   align-items: center;
   min-height: 100vh;
   position: relative;
-  padding-top: -100vh;
   overflow: hidden;
 }
 
@@ -93,7 +92,7 @@
 .glow {
   position: absolute;
   height: 100%;
-  width: 100%;
+  width: 70%;
   z-index: 0;
   inset: 0;
   top: 10%;
@@ -175,7 +174,6 @@
 @media (max-width: 800px) {
   .container {
     padding-top: 180px;
-    min-height: auto;
   }
   .glow {
     transform: scale(1.5);

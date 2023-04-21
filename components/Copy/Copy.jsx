@@ -12,7 +12,6 @@ function Copy(props) {
         pin: ".copy",
         start: "top top",
         end: () => `+=${window.innerHeight * 2}`,
-        markers: true,
         anticipatePin: 1,
         refreshPriority: 92,
         defaults: {
