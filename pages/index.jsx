@@ -42,7 +42,7 @@ export default function Home({ data }) {
           content="https://i.imgur.com/29mCnUt.jpeg"
         ></meta>
       </Head>
-      <Loader />
+      {/* <Loader />
       <Intro data={data[0].intro} />
       {isMobile && (
         <Nav logo="/logo/logo-dark.svg" data={data[0].intro} theme="dark" />
@@ -50,11 +50,11 @@ export default function Home({ data }) {
       <Hero data={[data[0].intro, data[0].hero]} />
       {!isMobile && <Desktop data={data[0].desktop} />}
       {isMobile && <DesktopMobile data={data[0].desktop} />}
-      {/* <Features data={data[0].features} /> */}
+      <Features data={data[0].features} />
       <Experience />
       <Mobile data={data[0].mobile} />
       <Privacy />
-      <Monkey data={data[0].monkey} />
+      <Monkey data={data[0].monkey} /> */}
       <Copy data={data[0].copy} />
       <Email data={data[0].contact} />
       <style jsx global>
