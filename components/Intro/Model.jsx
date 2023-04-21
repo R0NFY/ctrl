@@ -25,7 +25,9 @@ export function Model(props) {
   let animObj = { time: 0, scale: 1, positionZ: 0 }
 
   useLayoutEffect(() => {
-    ScrollTrigger.normalizeScroll(true)
+    if (window.innerWidth < 800) {
+      ScrollTrigger.normalizeScroll(true)
+    }
 
     const tl = gsap.timeline({
       scrollTrigger: {
