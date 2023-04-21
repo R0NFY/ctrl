@@ -5,7 +5,6 @@ import { useFrame } from "@react-three/fiber"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
-ScrollTrigger.normalizeScroll(true)
 gsap.registerPlugin(ScrollTrigger)
 
 export function Model(props) {
@@ -26,6 +25,8 @@ export function Model(props) {
   let animObj = { time: 0, scale: 1, positionZ: 0 }
 
   useLayoutEffect(() => {
+    ScrollTrigger.normalizeScroll(true)
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".intro",

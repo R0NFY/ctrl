@@ -3,10 +3,14 @@ import styles from "@/styles/Features.module.css"
 import Image from "next/image"
 
 import gsap from "gsap"
-import { useLayoutEffect } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 import Background from "./Background"
 
 function Features(props) {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   useLayoutEffect(() => {
     const fullTl = gsap.timeline({
       scrollTrigger: {
@@ -103,79 +107,84 @@ function Features(props) {
   return (
     <div className={`${styles.container} features`}>
       <Background />
-      <Feature
-        name={props.wallet}
-        desc={props.walletDesc}
-        anim={
-          <div>
-            <Image
-              src="/features/Wallet.png"
-              width={1200}
-              height={503}
-              alt="blockchain chains"
-              className={`${styles.wallet} wallet`}
-            />
-            <Image
-              src="/features/Crypto.png"
-              width={1200}
-              height={503}
-              alt="blockchain chains"
-              className={`${styles.crypto} crypto`}
-            />
-          </div>
-        }
-      ></Feature>
-      <Feature
-        name={props.innovative}
-        desc={props.innovativeDesc}
-        anim={
-          <video
-            className={styles.brain}
-            autoPlay
-            playsInline
-            loop
-            muted
-            preload="auto"
-          >
-            <source src="/features/brain.mp4" />
-          </video>
-        }
-      ></Feature>
-      <Feature
-        name={props.radar}
-        desc={props.radarDesc}
-        anim={
-          <video
-            className={styles.radar}
-            autoPlay
-            playsInline
-            loop
-            muted
-            preload="auto"
-          >
-            <source src="/features/radar.mp4" />
-          </video>
-        }
-      ></Feature>
-      <Feature
-        name={props.platform}
-        desc={props.platformDesc}
-        anim={
-          <span className={styles.platformSpan}>
-            <video
-              className={styles.platform}
-              autoPlay
-              playsInline
-              loop
-              muted
-              preload="auto"
-            >
-              <source src="/features/tiles.mp4" />
-            </video>
-            <img src="/features/stills/platform.png" alt="" />
-          </span>
-        }
-      ></Feature>
+      {mounted && (
+        <>
+          {" "}
+          <Feature
+            name={props.wallet}
+            desc={props.walletDesc}
+            anim={
+              <div>
+                <Image
+                  src="/features/Wallet.png"
+                  width={1200}
+                  height={503}
+                  alt="blockchain chains"
+                  className={`${styles.wallet} wallet`}
+                />
+                <Image
+                  src="/features/Crypto.png"
+                  width={1200}
+                  height={503}
+                  alt="blockchain chains"
+                  className={`${styles.crypto} crypto`}
+                />
+              </div>
+            }
+          ></Feature>
+          <Feature
+            name={props.innovative}
+            desc={props.innovativeDesc}
+            anim={
+              <video
+                className={styles.brain}
+                autoPlay
+                playsInline
+                loop
+                muted
+                preload="auto"
+              >
+                <source src="/features/brain.mp4" />
+              </video>
+            }
+          ></Feature>
+          <Feature
+            name={props.radar}
+            desc={props.radarDesc}
+            anim={
+              <video
+                className={styles.radar}
+                autoPlay
+                playsInline
+                loop
+                muted
+                preload="auto"
+              >
+                <source src="/features/radar.mp4" />
+              </video>
+            }
+          ></Feature>
+          <Feature
+            name={props.platform}
+            desc={props.platformDesc}
+            anim={
+              <span className={styles.platformSpan}>
+                <video
+                  className={styles.platform}
+                  autoPlay
+                  playsInline
+                  loop
+                  muted
+                  preload="auto"
+                >
+                  <source src="/features/tiles.mp4" />
+                </video>
+                <img src="/features/stills/platform.png" alt="" />
+              </span>
+            }
+          ></Feature>
+        </>
+      )}
     </div>
   )
 }
