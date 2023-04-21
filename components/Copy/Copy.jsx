@@ -3,6 +3,11 @@ import styles from "@/styles/Copy.module.css"
 import gsap from "gsap"
 import { useLayoutEffect } from "react"
 
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+ScrollTrigger.normalizeScroll(true)
+
+gsap.registerPlugin(ScrollTrigger)
+
 function Copy(props) {
   useLayoutEffect(() => {
     const tl = gsap.timeline({

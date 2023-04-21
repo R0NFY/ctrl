@@ -5,7 +5,7 @@ import { useFrame } from "@react-three/fiber"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 
-ScrollTrigger.config({ ignoreMobileResize: true })
+ScrollTrigger.normalizeScroll(true)
 gsap.registerPlugin(ScrollTrigger)
 
 export function Model(props) {
